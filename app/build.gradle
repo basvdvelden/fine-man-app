@@ -1,0 +1,116 @@
+apply plugin: 'com.android.application'
+apply plugin: "androidx.navigation.safeargs"
+
+
+def appPropertiesFile = rootProject.file("app/app.properties")
+def appProperties = new Properties()
+appProperties.load(new FileInputStream(appPropertiesFile))
+
+android {
+    // TODO: remove this
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId 'nl.management.finance.app'
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField("String", "API_URL", appProperties['api.url'])
+        buildConfigField("String", "RABO_API_URL", appProperties['rabo.api.url'])
+        buildConfigField("String", "RABO_CLIENT_ID", appProperties['rabo.client.id'])
+        buildConfigField("String", "RABO_CLIENT_SECRET", appProperties['rabo.client.secret'])
+        buildConfigField("String", "RABO_TPP_SC", appProperties['rabo.tpp.sc'])
+        buildConfigField("String", "RABO_PRIVATE_KEY", appProperties['rabo.private.key'])
+        buildConfigField("int", "RABO_KEY_ID", appProperties['rabo.key.id'])
+
+        // banks
+        buildConfigField("int", "RABO_BANK_ID", "1")
+        buildConfigField("String", "RABO_BANK_NAME", "\"Rabobank\"")
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    implementation 'me.gosimple:nbvcxz:1.4.3'
+
+    def room_version = "2.2.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.1.0'
+    implementation 'androidx.navigation:navigation-ui:2.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    def retrofit_version = "2.6.1"
+    def okhttp_version = "4.2.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    def nav_version = "2.1.0"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    implementation 'com.google.android.material:material'
+
+    implementation 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
+
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0-RC6'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0-SNAPSHOT'
+
+    def dagger_version = "2.25.2"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.3.0-alpha03'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha03'
+
+    implementation project(":auth-man-app")
+}

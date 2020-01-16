@@ -1,0 +1,46 @@
+<resources>
+    <string name="pin_1">1\n</string>
+    <string name="pin_2">2\nabc</string>
+    <string name="pin_3">3\ndef</string>
+    <string name="pin_4">4\nghi</string>
+    <string name="pin_5">5\njkl</string>
+    <string name="pin_6">6\nmno</string>
+    <string name="pin_7">7\npqrs</string>
+    <string name="pin_8">8\ntuv</string>
+    <string name="pin_9">9\nwxyz</string>
+    <string name="pin_0">0</string>
+    <string name="delete">delete</string>
+    <string name="app_name">Fineman</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome %s !"</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_credentials_incorrect">"Your username or password was incorrect!"</string>
+    <string name="verify_pin">Enter your pin</string>
+    <string name="register_pin1">Enter your new pin</string>
+    <string name="register_pin2">Enter your pin again</string>
+    <string name="wrong_pin_code">The pin code you entered was incorrect</string>
+    <string name="server_error">An unexpected error occurred, please try again later.</string>
+    <string name="pin_verification_successful">Your pin was successfully verified!</string>
+    <string name="pin_codes_not_equal">Please enter the same pin twice!</string>
+    <string name="google_client_id">880901911080-cq3d9onpe72fcpinp6ehs4ghc7jc3gks.apps.googleusercontent.com</string>
+    <string name="login_success">Successfully logged in!</string>
+    <string name="setup_title_text">Setup</string>
+    <string name="banks_spinner_label_text">Choose a bank</string>
+    <string name="give_consent_button_text">Give consent</string>
+
+    <!--bank names-->
+    <string name="rabobank">Rabobank</string>
+    <string name="setup_account">setup</string>
+
+    <string-array name="banks">
+        <item>…</item>
+        <item>@string/rabobank</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bank_accounts_title_text">Bank accounts</string>
+</resources>

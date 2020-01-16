@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.reactivex.rxjava3:rxandroid:3.0.0-SNAPSHOT@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bc5bf6a2d879b08b8e8c95bd41c0becb/rxandroid-3.0.0-SNAPSHOT/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bc5bf6a2d879b08b8e8c95bd41c0becb/rxandroid-3.0.0-SNAPSHOT/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava3/rxandroid/3.0.0-SNAPSHOT/980f62cee64dc5fc9553172c627cb44c32e580a0/rxandroid-3.0.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava3/rxandroid/3.0.0-SNAPSHOT/980f62cee64dc5fc9553172c627cb44c32e580a0/rxandroid-3.0.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

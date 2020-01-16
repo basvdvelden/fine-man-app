@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:auth-man-app:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/auth-man-app/build/.transforms/12b851208fbd93763af7582074d182da/OAuth2-debug/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/auth-man-app/build/.transforms/12b851208fbd93763af7582074d182da/OAuth2-debug/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

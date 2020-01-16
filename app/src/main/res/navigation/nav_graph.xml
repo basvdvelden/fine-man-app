@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/rootFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="nl.management.finance.app.ui.overview.OverviewFragment"
+        android:label="activity_main"
+        tools:layout="@layout/fragment_overview" >
+        <argument
+            android:name="exitOnBack"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_mainFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <include app:graph="@navigation/login_nav_graph" />
+    <fragment
+        android:id="@+id/pinFragment"
+        android:name="nl.management.finance.app.ui.pin.PinFragment"
+        android:label="fragment_pin"
+        tools:layout="@layout/fragment_pin" >
+        <argument
+            android:name="exitOnBack"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_pinFragment_self"
+            app:destination="@id/pinFragment"
+            app:popUpTo="@+id/pinFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_pinFragment_to_setupFragment"
+            app:destination="@id/setupFragment"
+            app:popUpTo="@+id/pinFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_pinFragment"
+        app:destination="@id/pinFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@+id/pinFragment"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_login_nav_graph"
+        app:destination="@id/login_nav_graph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="nl.management.finance.app.ui.setup.SetupFragment"
+        android:label="fragment_setup"
+        tools:layout="@layout/fragment_setup" >
+        <action
+            android:id="@+id/action_setupFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="state"
+            app:argType="string[]"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="consentCode"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_setupFragment"
+        app:destination="@id/setupFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popUpTo="@id/nav_graph"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/rootFragment"
+        android:name="nl.management.finance.app.ui.RootFragment"
+        android:label="fragment_root"
+        tools:layout="@layout/fragment_root" >
+        <action
+            android:id="@+id/action_rootFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@+id/rootFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="nl.management.finance.app.ui.transactions.TransactionFragment"
+        android:label="fragment_transaction_list"
+        tools:layout="@layout/fragment_transaction_list" >
+        <argument
+            android:name="iban"
+            app:argType="string" />
+    </fragment>
+</navigation>

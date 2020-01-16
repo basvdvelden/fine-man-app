@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.pin.PinFragment"
+    tools:layout_editor_absoluteY="81dp">
+
+    <RadioButton
+        android:id="@+id/pinRB3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@+id/pinButt0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/pinRB5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/pinRB3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pinRB3" />
+
+    <RadioButton
+        android:id="@+id/pinRB1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/pinRB3"
+        app:layout_constraintEnd_toStartOf="@+id/pinRB3"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioButton
+        android:id="@+id/pinRB2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/pinRB3"
+        app:layout_constraintEnd_toStartOf="@+id/pinRB3"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toEndOf="@+id/pinRB1" />
+
+    <RadioButton
+        android:id="@+id/pinRB4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/pinRB5"
+        app:layout_constraintEnd_toStartOf="@+id/pinRB5"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toEndOf="@+id/pinRB3" />
+
+    <Button
+        android:id="@+id/pinButt1"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:text="@string/pin_1"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pinButt2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/pinButt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_4"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/pinButt1"
+        app:layout_constraintTop_toBottomOf="@+id/pinButt2" />
+
+    <Button
+        android:id="@+id/pinButt7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_7"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/pinButt4"
+        app:layout_constraintTop_toTopOf="@+id/pinButt8" />
+
+    <Button
+        android:id="@+id/pinButt0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_0"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/pinButt8"
+        app:layout_constraintTop_toBottomOf="@+id/pinButt8" />
+
+    <Button
+        android:id="@+id/pinButtDel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pinButt0"
+        app:layout_constraintEnd_toEndOf="@+id/pinButt9" />
+
+    <Button
+        android:id="@+id/pinButt6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_6"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/pinButt9"
+        app:layout_constraintTop_toBottomOf="@+id/pinButt2" />
+
+    <Button
+        android:id="@+id/pinButt8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_8"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pinButt4" />
+
+    <Button
+        android:id="@+id/pinButt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pinButt1" />
+
+    <Button
+        android:id="@+id/pinButt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="88dp"
+        android:text="@string/pin_5"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/pinButt6"
+        app:layout_constraintTop_toBottomOf="@+id/pinButt1" />
+
+    <Button
+        android:id="@+id/pinButt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_3"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/pinButt2"
+        app:layout_constraintTop_toTopOf="@+id/pinButt2" />
+
+    <Button
+        android:id="@+id/pinButt9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pin_9"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/pinButt8"
+        app:layout_constraintTop_toTopOf="@+id/pinButt8" />
+
+    <TextView
+        android:id="@+id/pinText"
+        android:layout_width="264dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="84dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/pinButt2"
+        app:layout_constraintEnd_toEndOf="@+id/pinButt3"
+        app:layout_constraintStart_toStartOf="@+id/pinButt1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
