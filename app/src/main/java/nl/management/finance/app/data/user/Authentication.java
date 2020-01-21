@@ -10,6 +10,7 @@ public class Authentication {
     @SerializedName("access_token")
     private String accessToken;
     @SerializedName("expires_in")
+    private Long expiresIn;
     private Long expiresAt;
     @SerializedName("refresh_token")
     private String refreshToken;
@@ -33,6 +34,14 @@ public class Authentication {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
+    }
+
+    public Long getExpiresIn() {
+        return this.expiresIn;
+    }
+
+    public void setExpiresIn(Long expiresIn) {
+        this.expiresIn = expiresIn;
     }
 
     public Long getExpiresAt() {

@@ -9,6 +9,7 @@ import javax.inject.Singleton;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import nl.authentication.management.app.LoginNotifier;
 import nl.authentication.management.app.data.login.FineAuthenticationFailedException;
 import nl.authentication.management.app.data.login.LoggedInUser;
 import nl.management.finance.app.data.Result;
@@ -21,13 +22,11 @@ public class UserViewModel extends ViewModel {
     private static final String TAG = "UserViewModel";
 
     private UserRepository userRepository;
-    private UserBankRepository userBankRepository;
     private MutableLiveData<UIResult<Boolean>> hasRegisteredPin = new MutableLiveData<>();
 
     @Inject
-    UserViewModel(UserRepository userRepository, UserBankRepository userBankRepository) {
+    UserViewModel(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.userBankRepository = userBankRepository;
     }
 
     public LiveData<UIResult<Boolean>> hasRegisteredPin() {
@@ -59,11 +58,6 @@ public class UserViewModel extends ViewModel {
 
     void deletePinFromMemory() {
         userRepository.deletePinFromMemory();
-    }
-
-    public void setCurrentUser(LoggedInUser user) {
-        this.userRepository.setCurrentUser(user);
-        this.userBankRepository.setCurrentBank(user.getUserId().toString());
     }
 
     private final class AuthTask extends AsyncTask<Void, Void, Result<Boolean>> {

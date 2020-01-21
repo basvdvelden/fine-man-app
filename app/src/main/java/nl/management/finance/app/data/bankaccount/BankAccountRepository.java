@@ -1,13 +1,21 @@
 package nl.management.finance.app.data.bankaccount;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import nl.management.finance.app.BuildConfig;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import nl.management.finance.app.UserContext;
+import nl.management.finance.app.UserSubject;
 import nl.management.finance.app.data.Result;
+import nl.management.finance.app.data.user.User;
+import nl.management.finance.app.ui.overview.model.BankAccountView;
 
 public class BankAccountRepository {
     private static final String TAG = "BankAccountRepository";
@@ -16,53 +24,48 @@ public class BankAccountRepository {
     private final BankAccountDao bankAccountDao;
     private final UserContext userContext;
     private final BankAccountMapper mapper;
+    private LiveData<List<BankAccountView>> bankAccounts;
 
     @Inject
     public BankAccountRepository(BankAccountDataSource dataSource, BankAccountDao bankAccountDao,
-                                 UserContext userContext, BankAccountMapper mapper) {
+                                 UserContext userContext, BankAccountMapper mapper,
+                                 UserSubject userSubject) {
         this.dataSource = dataSource;
         this.bankAccountDao = bankAccountDao;
         this.userContext = userContext;
         this.mapper = mapper;
-    }
-
-    public Result<List<BankAccount>> getBankAccounts() {
-        List<BankAccount> bankAccounts = bankAccountDao.getBankAccounts(userContext.getUserId().toString());
-        if (bankAccounts.size() < 1) {
-            Result<List<BankAccount>> result = getBankAccountsRemotely();
-            if (result instanceof Result.Success) {
-                bankAccounts = ((Result.Success<List<BankAccount>>) result).getData();
-                bankAccountDao.insertBankAccounts(bankAccounts);
+        bankAccounts = bankAccountDao.getBankAccountsForUI(userContext.getUserId().toString());
+        Completable.fromAction(() -> {
+            if (bankAccounts.getValue() == null || bankAccounts.getValue().size() < 1) {
+                refreshBankAccounts();
             }
-            return result;
-        }
-        return  new Result.Success<List<BankAccount>>(bankAccounts);
+        }).subscribeOn(Schedulers.io())
+        .subscribe();
     }
 
-    public Result<List<BankAccount>> getBankAccountsRemotely() {
-        List<BankAccount> data = new ArrayList<>();
+    public LiveData<List<BankAccountView>> getBankAccounts() {
+        return bankAccounts;
+    }
 
+    public void refreshBankAccounts() {
         Result<List<BankAccountDto>> bankAccountDtos = dataSource.getBankAccounts();
         if (bankAccountDtos instanceof Result.Success) {
             List<BankAccountDto> dtos = ((Result.Success<List<BankAccountDto>>) bankAccountDtos).getData();
+            List<BankAccount> bankAccounts = new ArrayList<>();
             for (BankAccountDto dto: dtos) {
-                Result<Double> balanceResult = getBalance(dto.getResourceId());
+                Result<Double> balanceResult = dataSource.getBalance(dto.getResourceId());
 
                 if (balanceResult instanceof Result.Success) {
                     Double balance = ((Result.Success<Double>) balanceResult).getData();
-                    data.add(mapper.toEntity(dto, balance));
+                    bankAccounts.add(mapper.toEntity(dto, balance));
                 } else {
-                    return new Result.Error(((Result.Error) balanceResult).getError());
+                    // TODO:
                 }
             }
+            bankAccountDao.insertBankAccounts(bankAccounts);
         } else {
-            return new Result.Error(((Result.Error) bankAccountDtos).getError());
+            // TODO:
         }
-        return new Result.Success<>(data);
-    }
-
-    private Result<Double> getBalance(String resourceId) {
-        return dataSource.getBalance(resourceId);
     }
 
     public void saveBankAccounts(List<BankAccount> bankAccounts) {

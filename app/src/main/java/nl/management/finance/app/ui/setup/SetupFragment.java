@@ -81,7 +81,7 @@ public class SetupFragment extends Fragment implements AdapterView.OnItemSelecte
                     case "Rabobank":
                         String state = setupViewModel.getPin() + ";" + setupViewModel.getBank();
                         intentUrl = String.format(
-                                "%s/oauth2/authorize?client_id=%s&response_type=code&scope=ais.balances.read ais.transactions.read-90days&state=%s",
+                                "%s/oauth2/authorize?client_id=%s&response_type=code&scope=ais.balances.read ais.transactions.read-90days ais.transactions.read-history47&state=%s",
                                 BuildConfig.RABO_API_URL, BuildConfig.RABO_CLIENT_ID, state);
                         Log.d(TAG, intentUrl);
                 }

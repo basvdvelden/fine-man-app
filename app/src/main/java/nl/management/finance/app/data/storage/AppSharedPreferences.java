@@ -1,6 +1,7 @@
 package nl.management.finance.app.data.storage;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import javax.inject.Inject;
 import javax.inject.Named;

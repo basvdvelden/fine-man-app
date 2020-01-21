@@ -1,14 +1,12 @@
 package nl.management.finance.app.data.userbank;
 
-import android.os.Build;
-
 import javax.inject.Inject;
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import nl.management.finance.app.BuildConfig;
 import nl.management.finance.app.UserContext;
+import nl.management.finance.app.UserSubject;
 import nl.management.finance.app.data.user.User;
 
 public class UserBankRepository {
@@ -18,35 +16,32 @@ public class UserBankRepository {
     private final UserContext context;
 
     @Inject
-    public UserBankRepository(UserBankDao userBankDao, UserContext context) {
+    public UserBankRepository(UserBankDao userBankDao, UserContext context, UserSubject userSubject) {
         this.userBankDao = userBankDao;
         this.context = context;
+        userSubject.get().subscribe(optUser -> {
+            User user = optUser.get();
+            if (user != null) {
+                Completable.fromAction(() -> {
+                    // TODO: should return a list since this is a many to many
+                    UserBank userBank = userBankDao.getByUserId(user.getId());
+                    switch (userBank.getBankId()) {
+                        case BuildConfig.RABO_BANK_ID:
+                            context.setBank(BuildConfig.RABO_BANK_NAME);
+                            context.setConsentCode(userBank.getConsentCode());
+                            break;
+                        default:
+                            throw new RuntimeException(String.format("no bank with id: %d", userBank.getBankId()));
 
+                    }
+                }).subscribeOn(Schedulers.io())
+                        .subscribe();
+            }
+        });
     }
 
     public void addUserBankLocally(UserBank userBank) {
         this.userBankDao.insertUserBank(userBank);
     }
 
-    public void setCurrentBank(String userId) {
-        Completable.fromAction(() -> {
-            UserBank userBank = userBankDao.getByUserId(userId);
-            if (userBank != null) {
-                switch (userBank.getBankId()) {
-                    case BuildConfig.RABO_BANK_ID:
-                        context.setBank(BuildConfig.RABO_BANK_NAME);
-                        break;
-                    default:
-                        throw new RuntimeException(String.format("no bank with id: %d", userBank.getBankId()));
-
-                }
-            }
-        }).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
-    }
-
-    public UserBank getForUser(User user) {
-        return userBankDao.getByUserId(user.getId());
-    }
 }

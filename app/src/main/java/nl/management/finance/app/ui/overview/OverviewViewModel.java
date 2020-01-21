@@ -22,33 +22,19 @@ import nl.management.finance.app.ui.overview.model.BankAccountView;
 public class OverviewViewModel extends ViewModel {
     private final static String TAG = "OverviewViewModel";
     private final BankAccountRepository bankAccountRepository;
-    private final BankAccountMapper mapper;
-    private final MutableLiveData<List<BankAccountView>> liveBankAccounts = new MutableLiveData<>();
+    private final LiveData<List<BankAccountView>> bankAccounts;
 
     @Inject
-    public OverviewViewModel(BankAccountRepository bankAccountRepository, BankAccountMapper mapper) {
+    public OverviewViewModel(BankAccountRepository bankAccountRepository) {
         this.bankAccountRepository = bankAccountRepository;
-        this.mapper = mapper;
-
-        Completable.fromAction(() -> liveBankAccounts.postValue(getBankAccounts()))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
+        bankAccounts = bankAccountRepository.getBankAccounts();
     }
 
-    public LiveData<List<BankAccountView>> getLiveBankAccounts()  {
-        return this.liveBankAccounts;
+    public LiveData<List<BankAccountView>> getBankAccounts()  {
+        return this.bankAccounts;
     }
 
-    private List<BankAccountView> getBankAccounts() {
-        Result<List<BankAccount>> bankAccountsResult = bankAccountRepository.getBankAccounts();
-        if (bankAccountsResult instanceof Result.Success) {
-            List<BankAccount> bankAccounts = ((Result.Success<List<BankAccount>>) bankAccountsResult)
-                    .getData();
-            return mapper.toViews(bankAccounts);
-        } else {
-            Log.e(TAG, "error getting bank accounts: ", ((Result.Error) bankAccountsResult).getError());
-            throw new NotYetImplementedException("activity should show error pop up");
-        }
+    public void refreshBankAccounts() {
+        bankAccountRepository.refreshBankAccounts();
     }
 }

@@ -41,8 +41,13 @@ public class TransactionViewModel extends ViewModel {
                         List<Transaction> data = ((Result.Success<List<Transaction>>) result).getData();
                         transactions.setValue(mapper.toViews(data));
                     }
+                    // TODO: remove
                     repository.delete();
                 });
         return transactions;
+    }
+
+    public void refresh() {
+        bankAccountRepository.refreshBankAccounts();
     }
 }

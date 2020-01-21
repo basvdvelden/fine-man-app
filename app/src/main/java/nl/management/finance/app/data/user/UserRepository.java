@@ -4,11 +4,11 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
-import nl.authentication.management.app.data.login.LoggedInUser;
+import nl.authentication.management.app.LoginNotifier;
 import nl.management.finance.app.UserContext;
+import nl.management.finance.app.UserSubject;
 import nl.management.finance.app.data.Result;
 import nl.management.finance.app.data.api.BankAuthNotifier;
 import nl.management.finance.app.data.storage.UserCache;
@@ -24,12 +24,14 @@ public class UserRepository {
     private final UserDao userDao;
     private final UserBankRepository userBankRepository;
     private final BankAuthNotifier bankAuthNotifier;
+    private final LoginNotifier loginNotifier;
+    private final UserSubject userSubject;
 
     @Inject
     public UserRepository(UserDataSource userDataSource, UserCache userCache,
                           UserSharedPreferences userSharedPrefs, UserContext userContext,
                           UserDao userDao, UserBankRepository userBankRepository,
-                          BankAuthNotifier bankAuthNotifier) {
+                          BankAuthNotifier bankAuthNotifier, LoginNotifier loginNotifier, UserSubject userSubject) {
         this.userDataSource = userDataSource;
         this.userCache = userCache;
         this.userSharedPrefs = userSharedPrefs;
@@ -37,9 +39,27 @@ public class UserRepository {
         this.userDao = userDao;
         this.userBankRepository = userBankRepository;
         this.bankAuthNotifier = bankAuthNotifier;
+        this.loginNotifier = loginNotifier;
+        this.userSubject = userSubject;
         this.bankAuthNotifier.getUpdatedAuthentication().subscribe(authentication -> {
             updateBankAuthInfo(authentication.getTokenType(), authentication.getExpiresAt(),
                     authentication.getAccessToken(), authentication.getRefreshToken());
+        });
+        this.loginNotifier.getLoggedInSubject().subscribe(loggedInUser -> {
+            if (loggedInUser != null) {
+                Completable.fromAction(() -> {
+                    User user = getUser();
+                    this.userSubject.setUser(user);
+                }).subscribeOn(Schedulers.io())
+                .subscribe();
+            }
+        });
+        this.userSubject.get().subscribe(user -> {
+            if (user.get() != null) {
+                this.bankAuthNotifier.updateBankAuthInfo(userSharedPrefs.getTokenType(),
+                        userSharedPrefs.getExpiresAt(), userSharedPrefs.getAccessToken(),
+                        userSharedPrefs.getRefreshToken());
+            }
         });
         // TODO: weghalen
         this.userSharedPrefs.wipeHasRegisteredPin();
@@ -77,20 +97,6 @@ public class UserRepository {
 
     public void deletePinFromMemory() {
         userCache.setPin(null);
-    }
-
-    public void setCurrentUser(LoggedInUser loggedInUser) {
-        this.userContext.userDataChanged(loggedInUser.getUserId(), loggedInUser.getDisplayName(), loggedInUser.getUsername());
-
-        Completable.fromAction(() -> {
-            if (getUser() != null) {
-                this.bankAuthNotifier.updateBankAuthInfo(userSharedPrefs.getTokenType(),
-                        userSharedPrefs.getExpiresAt(), userSharedPrefs.getAccessToken(),
-                        userSharedPrefs.getRefreshToken());
-            }
-        }).subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe();
     }
 
     private User getUser() {

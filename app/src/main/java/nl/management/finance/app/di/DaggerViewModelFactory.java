@@ -3,6 +3,8 @@ package nl.management.finance.app.di;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import nl.authentication.management.app.ui.AuthViewModel;
+import nl.management.finance.app.NavHostViewModel;
 
 import java.util.Map;
 
@@ -29,6 +31,10 @@ public class DaggerViewModelFactory implements ViewModelProvider.Factory {
     @Override
     @SuppressWarnings("unchecked")
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+        // initialize login repository if nav host fragment is started
+        if (modelClass == NavHostViewModel.class) {
+            create(AuthViewModel.class);
+        }
         Provider<? extends ViewModel> creator = creators.get(modelClass);
 
         if (creator == null) {

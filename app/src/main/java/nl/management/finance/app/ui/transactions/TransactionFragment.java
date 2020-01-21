@@ -11,9 +11,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +27,18 @@ import java.util.Objects;
 import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
+import io.reactivex.rxjava3.subjects.PublishSubject;
+import nl.authentication.management.app.api.NetworkNotifier;
 import nl.management.finance.app.R;
 import nl.management.finance.app.di.DaggerViewModelFactory;
 import nl.management.finance.app.ui.transactions.dummy.DummyContent;
 
 public class TransactionFragment extends Fragment {
+    private static final String TAG = "TransactionFragment";
     private TransactionViewModel viewModel;
     private TransactionRecyclerViewAdapter adapter;
     private RecyclerView recyclerView;
@@ -34,6 +46,9 @@ public class TransactionFragment extends Fragment {
 
     @Inject
     DaggerViewModelFactory viewModelFactory;
+    @Inject
+    NetworkNotifier networkNotifier;
+    private Disposable networkDisposable;
 
     // TODO: Customize parameters
     private int mColumnCount = 1;
@@ -41,7 +56,6 @@ public class TransactionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -68,6 +82,12 @@ public class TransactionFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         AndroidSupportInjection.inject(this);
         super.onCreate(savedInstanceState);
+        networkDisposable = networkNotifier.getNetworkStatus().observeOn(AndroidSchedulers.mainThread()).subscribe(event -> {
+            Log.d(TAG, "showing snackbar");
+            Snackbar snackbar = Snackbar.make(view, "Network is currently not available", Snackbar.LENGTH_LONG);
+            snackbar.show();
+            networkDisposable.dispose();
+        });
         viewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(TransactionViewModel.class);
         Bundle args = getArguments();
@@ -77,5 +97,16 @@ public class TransactionFragment extends Fragment {
            this.transactions.addAll(transactionViews);
            adapter.notifyDataSetChanged();
         });
+
+        Completable.fromAction(() -> {
+            Thread.sleep(7000L);
+            Log.d(TAG, "refreshing bank accounts");
+            viewModel.refresh();
+        }).subscribeOn(Schedulers.computation()).subscribe();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
     }
 }

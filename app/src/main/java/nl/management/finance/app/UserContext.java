@@ -1,9 +1,13 @@
 package nl.management.finance.app;
 
+import java.net.UnknownServiceException;
 import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
+import nl.authentication.management.app.LoginNotifier;
+import nl.management.finance.app.data.user.User;
 
 
 @Singleton
@@ -12,9 +16,19 @@ public class UserContext {
     private String displayName;
     private String username;
     private String bankName;
+    private User user;
+    private String consentCode;
+    private LoginNotifier loginNotifier;
 
     @Inject
-    public UserContext() {
+    public UserContext(LoginNotifier loginNotifier, UserSubject userSubject) {
+        this.loginNotifier = loginNotifier;
+        this.loginNotifier.getLoggedInSubject().subscribe((loggedInUser) -> {
+            if (loggedInUser != null) {
+                userDataChanged(loggedInUser.getUserId(), loggedInUser.getDisplayName(), loggedInUser.getUsername());
+            }
+        });
+        userSubject.get().subscribe(user -> this.user = user.get());
     }
 
     public void userDataChanged(UUID userId, String displayName, String username) {
@@ -62,5 +76,17 @@ public class UserContext {
             default:
                 throw new RuntimeException(String.format("no bank with name: %s", getBankName()));
         }
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public String getConsentCode() {
+        return consentCode;
+    }
+
+    public void setConsentCode(String consentCode) {
+        this.consentCode = consentCode;
     }
 }

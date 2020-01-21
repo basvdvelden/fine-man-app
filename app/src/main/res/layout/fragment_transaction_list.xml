@@ -10,4 +10,5 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".ui.transactions.TransactionFragment"
-    tools:listitem="@layout/fragment_transaction" />
+    tools:listitem="@layout/fragment_transaction" >
+</androidx.recyclerview.widget.RecyclerView>

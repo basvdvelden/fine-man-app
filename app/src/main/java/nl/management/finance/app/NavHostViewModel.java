@@ -28,6 +28,7 @@ public class NavHostViewModel extends ViewModel {
     }
 
     public void setVerifyPin(Boolean verifyPin) {
+        sharedPrefs.setVerifyPin(verifyPin);
         this.verifyPin.setValue(verifyPin);
     }
 

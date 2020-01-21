@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.os.Bundle;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -24,7 +22,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -43,7 +40,6 @@ public class OverviewFragment extends Fragment {
 
     private NavController navController;
     private AuthViewModel loginViewModel;
-    private UserViewModel userViewModel;
     private OverviewViewModel overviewViewModel;
     private ProgressBar loadingProgressBar;
     private RecyclerView recyclerView;
@@ -69,8 +65,6 @@ public class OverviewFragment extends Fragment {
         navController = Navigation.findNavController(requireView());
         loginViewModel = ViewModelProviders.of(requireActivity(), viewModelFactory)
                 .get(AuthViewModel.class);
-        userViewModel = ViewModelProviders.of(requireActivity(), viewModelFactory)
-                .get(UserViewModel.class);
         overviewViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(OverviewViewModel.class);
         loadingProgressBar = requireView().findViewById(R.id.loading);
@@ -88,11 +82,13 @@ public class OverviewFragment extends Fragment {
         });
         recyclerView.setAdapter(adapter);
 
-        overviewViewModel.getLiveBankAccounts().observe(this,
+        overviewViewModel.getBankAccounts().observe(this,
                 (bankAccountViews) -> {
-            bankAccounts.clear();
-            bankAccounts.addAll(bankAccountViews);
-            adapter.notifyDataSetChanged();
+            if (bankAccountViews != null) {
+                bankAccounts.clear();
+                bankAccounts.addAll(bankAccountViews);
+                adapter.notifyDataSetChanged();
+            }
         });
 
         boolean exitOnBack = requireArguments().getBoolean("exitOnBack");
@@ -114,7 +110,6 @@ public class OverviewFragment extends Fragment {
         Button mClickButton2 = requireView().findViewById(R.id.button2);
         mClickButton2.setOnClickListener(v -> {
             loginViewModel.logout();
-            userViewModel.logout();
         });
     }
 

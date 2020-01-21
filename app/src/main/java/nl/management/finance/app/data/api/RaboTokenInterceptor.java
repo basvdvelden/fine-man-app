@@ -8,11 +8,13 @@ import com.google.gson.Gson;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import nl.management.finance.app.BuildConfig;
+import nl.management.finance.app.UserContext;
 import nl.management.finance.app.data.user.Authentication;
 import okhttp3.FormBody;
 import okhttp3.Interceptor;
@@ -25,10 +27,12 @@ public class RaboTokenInterceptor implements Interceptor {
     private static final String TAG = "RaboTokenInterceptor";
     private final BankAuthNotifier authNotifier;
     private Authentication auth;
+    private UserContext context;
 
     @Inject
-    public RaboTokenInterceptor(BankAuthNotifier authNotifier) {
+    public RaboTokenInterceptor(BankAuthNotifier authNotifier, UserContext context) {
         this.authNotifier = authNotifier;
+        this.context = context;
         this.authNotifier.getAuthentication().subscribe(authentication -> this.auth = authentication);
     }
 
@@ -48,7 +52,7 @@ public class RaboTokenInterceptor implements Interceptor {
                 if (!response.isSuccessful()) {
                     Log.d(TAG, String.format("refreshing bank token failed, error: %s", response.body().string()));
                     response.close();
-                    response = chain.proceed(tokenRequest);
+                    response = chain.proceed(createRefreshRequest(tokenRequest));
                     if (!response.isSuccessful()) {
                         Log.w(TAG, String.format("refreshing bank token failed again, giving up. code: %d, error: %s",
                                 response.code(), response.body().string()));
@@ -57,6 +61,7 @@ public class RaboTokenInterceptor implements Interceptor {
                     }
                 }
                 Authentication auth = new Gson().fromJson(response.body().string(), Authentication.class);
+                auth.setExpiresAt(auth.getExpiresIn() * 1000 + System.currentTimeMillis());
                 authNotifier.updateAuthentication(auth);
             }
             originalRequest = originalRequest.newBuilder().addHeader(
