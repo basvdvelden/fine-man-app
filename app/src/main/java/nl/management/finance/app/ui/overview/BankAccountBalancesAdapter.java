@@ -3,7 +3,6 @@ package nl.management.finance.app.ui.overview;
 import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.subjects.PublishSubject;
 import nl.management.finance.app.R;
-import nl.management.finance.app.ui.overview.model.BankAccountView;
 
 class BankAccountBalancesAdapter extends RecyclerView.Adapter<BankAccountBalancesAdapter.BankAccountBalanceViewHolder> {
     private static final String TAG = "BalancesAdapter";

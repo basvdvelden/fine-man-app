@@ -3,8 +3,11 @@ package nl.management.finance.app.data.api.rabo;
 import javax.inject.Singleton;
 
 import nl.management.finance.app.data.bankaccount.RaboBankAccounts;
+import nl.management.finance.app.data.payment.rabo.RaboTransfer;
+import nl.management.finance.app.data.payment.rabo.RaboPaymentInitiationResponse;
 import nl.management.finance.app.data.transaction.rabo.RaboTransactions;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -30,4 +33,10 @@ public interface RaboApi {
     @GET("payments/account-information/ais/v3/accounts/{accountId}/transactions")
     Call<RaboTransactions> getTransactions(@Path("accountId") String accountId,
                                            @Query("bookingStatus") String bookingStatus);
+
+    @POST("payments/payment-initiation/pis/v1/payments/sepa-credit-transfers")
+    Call<RaboPaymentInitiationResponse> initiatePayment(@Header("PSU-IP-Address") String userIp,
+                                                        @Header("TPP-Redirect-URI") String redirectUri,
+                                                        @Header("Content-Type") String contentType,
+                                                        @Body RaboTransfer body);
 }

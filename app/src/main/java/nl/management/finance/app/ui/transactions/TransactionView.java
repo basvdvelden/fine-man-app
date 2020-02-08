@@ -1,5 +1,7 @@
 package nl.management.finance.app.ui.transactions;
 
+import androidx.annotation.NonNull;
+
 public class TransactionView {
     private String bookingDate;
     private String debtorName;
@@ -40,5 +42,13 @@ public class TransactionView {
 
     public String getCreditorName() {
         return creditorName;
+    }
+
+    @Override
+    @NonNull
+    public String toString() {
+        return String.format("[bookingDate=%s, debtorName=%s, creditorName=%s, amount=%s, description=%s, " +
+                "initiatingParty=%s]", bookingDate, debtorName, creditorName, amount, description,
+                initiatingParty);
     }
 }

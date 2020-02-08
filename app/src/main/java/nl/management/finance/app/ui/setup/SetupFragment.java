@@ -50,7 +50,7 @@ public class SetupFragment extends Fragment implements AdapterView.OnItemSelecte
         setupViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(SetupViewModel.class);
         navController = Navigation.findNavController(view);
-        setupViewModel.getRegisterResult().observe(this, (registerResult) -> {
+        setupViewModel.getSetupNewUserResult().observe(this, (registerResult) -> {
             if (registerResult.getError() == null) {
                 navController.navigate(R.id.action_setupFragment_to_mainFragment);
             } else {
@@ -60,6 +60,7 @@ public class SetupFragment extends Fragment implements AdapterView.OnItemSelecte
 
         Uri uri = requireActivity().getIntent().getData();
         if (uri != null) {
+            Log.e(TAG, uri.toString());
             String state = uri.getQueryParameter("state");
             String consentCode = uri.getQueryParameter("code");
             setupViewModel.restoreState(state);
@@ -72,7 +73,7 @@ public class SetupFragment extends Fragment implements AdapterView.OnItemSelecte
         if (setupViewModel.hasConsented()) {
             button.setText(R.string.setup_account);
             spinner.setEnabled(false);
-            button.setOnClickListener((v) -> setupViewModel.register());
+            button.setOnClickListener((v) -> setupViewModel.setupNewUser());
         } else {
             button.setEnabled(false);
             button.setOnClickListener((v) -> {
@@ -81,7 +82,7 @@ public class SetupFragment extends Fragment implements AdapterView.OnItemSelecte
                     case "Rabobank":
                         String state = setupViewModel.getPin() + ";" + setupViewModel.getBank();
                         intentUrl = String.format(
-                                "%s/oauth2/authorize?client_id=%s&response_type=code&scope=ais.balances.read ais.transactions.read-90days ais.transactions.read-history47&state=%s",
+                                "%s/oauth2/authorize?client_id=%s&response_type=code&scope=ais.balances.read ais.transactions.read-90days ais.transactions.read-history&state=%s",
                                 BuildConfig.RABO_API_URL, BuildConfig.RABO_CLIENT_ID, state);
                         Log.d(TAG, intentUrl);
                 }

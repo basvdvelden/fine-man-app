@@ -4,10 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/rootFragment">
+    <action
+        android:id="@+id/action_global_overviewFragment"
+        app:destination="@id/mainFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popUpTo="@id/nav_graph"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="nl.management.finance.app.ui.overview.OverviewFragment"
-        android:label="activity_main"
+        android:label="overview_fragment"
         tools:layout="@layout/fragment_overview" >
         <argument
             android:name="exitOnBack"
@@ -16,6 +24,43 @@
         <action
             android:id="@+id/action_mainFragment_to_transactionFragment"
             app:destination="@id/transactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_transferFragment"
+            app:destination="@id/transferFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="nl.management.finance.app.ui.transfer.TransferFragment"
+        android:label="transfer_fragment"
+        tools:layout="@layout/fragment_transfer" >
+    </fragment>
+    <action
+        android:id="@+id/action_global_helpFragment"
+        app:destination="@id/helpFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popUpTo="@id/nav_graph"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="nl.management.finance.app.ui.HelpFragment"
+        android:label="help_fragment"
+        tools:layout="@layout/fragment_help">
+    </fragment>
+    <action
+        android:id="@+id/action_global_settingsFragment"
+        app:destination="@id/settingsFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popUpTo="@id/nav_graph"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="nl.management.finance.app.ui.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment">
     </fragment>
     <include app:graph="@navigation/login_nav_graph" />
     <fragment
@@ -98,7 +143,7 @@
         android:label="fragment_transaction_list"
         tools:layout="@layout/fragment_transaction_list" >
         <argument
-            android:name="iban"
+            android:name="bankAccountId"
             app:argType="string" />
     </fragment>
 </navigation>

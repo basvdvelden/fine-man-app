@@ -9,6 +9,7 @@ import nl.management.finance.app.ui.overview.OverviewFragment;
 import nl.management.finance.app.ui.pin.PinFragment;
 import nl.management.finance.app.ui.setup.SetupFragment;
 import nl.management.finance.app.ui.transactions.TransactionFragment;
+import nl.management.finance.app.ui.transfer.TransferFragment;
 
 @Module(includes = nl.authentication.management.app.di.ActivityModule.class)
 public abstract class ActivityModule {
@@ -26,4 +27,6 @@ public abstract class ActivityModule {
     abstract RootFragment contributeRootFragmentInjector();
     @ContributesAndroidInjector
     abstract TransactionFragment contributeTransactionFragmentInjector();
+    @ContributesAndroidInjector
+    abstract TransferFragment contributeTransferFragmentInjector();
 }

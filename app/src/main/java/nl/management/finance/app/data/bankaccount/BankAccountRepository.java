@@ -1,22 +1,20 @@
 package nl.management.finance.app.data.bankaccount;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import nl.management.finance.app.UserContext;
 import nl.management.finance.app.UserSubject;
 import nl.management.finance.app.data.Result;
-import nl.management.finance.app.data.user.User;
-import nl.management.finance.app.ui.overview.model.BankAccountView;
+import nl.management.finance.app.ui.overview.BankAccountView;
 
+@Singleton
 public class BankAccountRepository {
     private static final String TAG = "BankAccountRepository";
 
@@ -47,6 +45,10 @@ public class BankAccountRepository {
         return bankAccounts;
     }
 
+    public List<BankAccount> getBankAccountsNOTUI() {
+        return bankAccountDao.getBankAccounts(userContext.getUserId().toString());
+    }
+
     public void refreshBankAccounts() {
         Result<List<BankAccountDto>> bankAccountDtos = dataSource.getBankAccounts();
         if (bankAccountDtos instanceof Result.Success) {
@@ -62,7 +64,7 @@ public class BankAccountRepository {
                     // TODO:
                 }
             }
-            bankAccountDao.insertBankAccounts(bankAccounts);
+            bankAccountDao.upsertBankAccounts(bankAccounts);
         } else {
             // TODO:
         }

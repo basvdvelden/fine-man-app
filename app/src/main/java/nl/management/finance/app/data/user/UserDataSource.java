@@ -15,6 +15,7 @@ import nl.management.finance.app.UserContext;
 import nl.management.finance.app.data.Result;
 import nl.management.finance.app.data.api.UserApi;
 import nl.management.finance.app.data.api.rabo.RaboApi;
+import nl.management.finance.app.data.bank.BankDto;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -104,5 +105,36 @@ public class UserDataSource {
                 throw new RuntimeException(String.format("no bank with name: %s", userContext.getBankName()));
         }
         return adapter.authenticate(code);
+    }
+
+    public Result<UserDto> getUser() {
+        try {
+            Response<UserDto> response = api.getUser(userContext.getUserId().toString()).clone()
+                    .execute();
+            if (response.isSuccessful()) {
+                return new Result.Success<UserDto>(response.body());
+            } else {
+                Log.w(TAG, String.format("could not getUser bank for user, response: [code=%d, msg=%s]",
+                        response.code(), response.errorBody().string()));
+                return new Result.Error(new Exception(
+                        String.format("could not getUser bank for user, response=%s", response.errorBody())));
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "io error getting users bank", e);
+            return new Result.Error(e);
+        }
+    }
+
+    public void updateBankAuthentication(Authentication auth) {
+        try {
+            Response<Void> response = api.updateBankAuthentication(userContext.getUserId().toString(),
+                    String.valueOf(userContext.getBankId()), auth).clone().execute();
+            if (!response.isSuccessful()) {
+                Log.e(TAG, String.format("syncing bank authentication with server failed, response=[code=%d, body=%s]",
+                        response.code(), response.errorBody()));
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "syncing bank authentication with server failed, ERROR:", e);
+        }
     }
 }

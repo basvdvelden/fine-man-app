@@ -14,10 +14,10 @@ public class TransactionMapper {
 
     }
 
-    public List<Transaction> toEntities(List<TransactionDto> dtos, String bankAccountResourceId) {
+    public List<Transaction> toEntities(List<TransactionDto> dtos, String iban) {
         List<Transaction> result = new ArrayList<>();
         for (TransactionDto dto: dtos) {
-            result.add(new Transaction(bankAccountResourceId, dto.getType(), dto.getCheckId(), dto.getBookingDate(),
+            result.add(new Transaction(iban, dto.getType(), dto.getCheckId(), dto.getBookingDate(),
                     dto.getDebtorName(), dto.getUltimateDebtor(), dto.getCreditorName(), dto.getUltimateCreditor(),
                     dto.getAmount(), dto.getDescription(), dto.getInitiatingParty()));
         }

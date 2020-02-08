@@ -32,7 +32,7 @@ public class RaboOAuthAdapter implements OAuthAdapter {
             if (!response.isSuccessful()) {
                 Exception error = new Exception(response.errorBody().string());
                 Log.e(TAG, String.format("response authenticating at rabobank unsuccessful, [code=%d, errorBody=%s]",
-                        response.code(), response.errorBody().string()), error);
+                        response.code(), error.getMessage()), error);
                 return new Result.Error(error);
             }
             return new Result.Success<>(generify(response.body()));

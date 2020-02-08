@@ -11,32 +11,32 @@ public class Transaction {
     @ColumnInfo(name = "id")
     private int id;
 
-    @ColumnInfo(name = "bank_account_resource_id")
-    private String bankAccountResourceId;
+    @ColumnInfo(name = "bankAccountId")
+    private String bankAccountId;
 
     @NonNull
     @ColumnInfo(name = "type")
     private String type;
 
-    @ColumnInfo(name = "check_id", index = true)
+    @ColumnInfo(name = "checkId", index = true)
     private String checkId;
 
     @NonNull
-    @ColumnInfo(name = "booking_date")
+    @ColumnInfo(name = "bookingDate")
     private String bookingDate;
 
-    @ColumnInfo(name = "debtor_name")
+    @ColumnInfo(name = "debtorName")
     private String debtorName;
 
     @NonNull
-    @ColumnInfo(name = "ultimate_debtor")
+    @ColumnInfo(name = "ultimateDebtor")
     private String ultimateDebtor;
 
-    @ColumnInfo(name = "creditor_name")
+    @ColumnInfo(name = "creditorName")
     private String creditorName;
 
     @NonNull
-    @ColumnInfo(name = "ultimate_creditor")
+    @ColumnInfo(name = "ultimateCreditor")
     private String ultimateCreditor;
 
     @NonNull
@@ -47,14 +47,14 @@ public class Transaction {
     private String description;
 
     @NonNull
-    @ColumnInfo(name = "initiating_party")
+    @ColumnInfo(name = "initiatingParty")
     private String initiatingParty;
 
-    public Transaction(String bankAccountResourceId, @NonNull String type, @NonNull String checkId,
+    public Transaction(String bankAccountId, @NonNull String type, @NonNull String checkId,
                        @NonNull String bookingDate, @NonNull String debtorName, @NonNull String ultimateDebtor,
                        String creditorName, @NonNull String ultimateCreditor, @NonNull String amount,
                        @NonNull String description, @NonNull String initiatingParty) {
-        this.bankAccountResourceId = bankAccountResourceId;
+        this.bankAccountId = bankAccountId;
         this.type = type;
         this.checkId = checkId;
         this.bookingDate = bookingDate;
@@ -75,8 +75,8 @@ public class Transaction {
         this.id = id;
     }
 
-    public String getBankAccountResourceId() {
-        return bankAccountResourceId;
+    public String getBankAccountId() {
+        return bankAccountId;
     }
 
     @NonNull

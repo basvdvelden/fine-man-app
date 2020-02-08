@@ -57,8 +57,16 @@ public class RaboHeaderInterceptor implements Interceptor {
                     .addHeader("digest", digest)
                     .addHeader("date", dateString)
                     .addHeader("x-ibm-client-id", BuildConfig.RABO_CLIENT_ID)
-                    .addHeader("signature", getSignatureHeader(requestId, digest, dateString))
                     .build();
+            if (request.url().toString().contains("payment-initiation")) {
+                request = request.newBuilder()
+                        .addHeader("signature", getSignatureHeader(requestId, digest, dateString, request.header("TPP-Redirect-URI")))
+                        .build();
+            } else {
+                request = request.newBuilder()
+                        .addHeader("signature", getSignatureHeader(requestId, digest, dateString))
+                        .build();
+            }
             Log.d(TAG, request.headers().toString());
         }
         return chain.proceed(request);
@@ -97,6 +105,30 @@ public class RaboHeaderInterceptor implements Interceptor {
         }
         return String.format(Locale.forLanguageTag("nl"),
                 "keyId=\"%d\",algorithm=\"rsa-sha512\",headers=\"date digest x-request-id\",signature=\"%s\"",
+                BuildConfig.RABO_KEY_ID, stringSignature);
+    }
+
+    private String getSignatureHeader(String requestId, String digest, String dateString, String redirectUri) {
+        String signingString = String.format("date: %s\ndigest: %s\nx-request-id: %s\ntpp-redirect-uri: %s",
+                dateString, digest, requestId, redirectUri);
+        PrivateKey privateKey = getPrivateKey();
+        String stringSignature = "";
+        try {
+            Signature signature = Signature.getInstance("SHA512withRSA");
+            signature.initSign(privateKey);
+            signature.update(signingString.getBytes());
+            byte[] signatureBytes = signature.sign();
+
+            stringSignature = Base64.encodeToString(signatureBytes, Base64.NO_WRAP);
+        } catch (NoSuchAlgorithmException e) {
+            Log.e(TAG, "signature not found ", e);
+        } catch (InvalidKeyException e) {
+            Log.e(TAG, "initialized sign with invalid key ", e);
+        } catch (SignatureException e) {
+            Log.e(TAG, "signature exception thrown ", e);
+        }
+        return String.format(Locale.forLanguageTag("nl"),
+                "keyId=\"%d\",algorithm=\"rsa-sha512\",headers=\"date digest x-request-id tpp-redirect-uri\",signature=\"%s\"",
                 BuildConfig.RABO_KEY_ID, stringSignature);
     }
 

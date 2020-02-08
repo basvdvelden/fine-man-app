@@ -8,6 +8,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import nl.management.finance.app.BuildConfig;
+import nl.management.finance.app.data.api.PinCodeInterceptor;
 import nl.management.finance.app.data.api.RaboHeaderInterceptor;
 import nl.management.finance.app.data.api.RaboTokenInterceptor;
 import nl.management.finance.app.data.api.UserApi;
@@ -23,7 +24,10 @@ public class AppApiModule {
     @Provides
     @Singleton
     @Named("fine")
-    public Retrofit provideFineRetrofit(Gson gson, OkHttpClient client) {
+    public Retrofit provideFineRetrofit(Gson gson, OkHttpClient client, PinCodeInterceptor pinCodeInterceptor) {
+        client = client.newBuilder()
+                .addInterceptor(pinCodeInterceptor)
+                .build();
         return new Retrofit.Builder()
                 .baseUrl(BuildConfig.API_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())

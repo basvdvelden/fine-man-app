@@ -5,17 +5,30 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
 
 public class Authentication {
+    @ColumnInfo(name = "access_token")
     @SerializedName("access_token")
     private String accessToken;
+
+    @Ignore
     @SerializedName("expires_in")
     private Long expiresIn;
+
+    @ColumnInfo(name = "expires_at")
+    @SerializedName("expires_at")
     private Long expiresAt;
+
+    @ColumnInfo(name = "refresh_token")
     @SerializedName("refresh_token")
     private String refreshToken;
-    @SerializedName("scope")
+
+    @Ignore
     private String scope;
+
+    @ColumnInfo(name = "token_type")
     @SerializedName("token_type")
     private String tokenType;
 

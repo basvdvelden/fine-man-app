@@ -43,7 +43,7 @@ public class RaboTokenInterceptor implements Interceptor {
         if (shouldFilter(originalRequest.url().toString())) {
             Log.d(TAG, String.format("filtering: url=%s", originalRequest.url().toString()));
             if (this.auth == null) {
-                throw new IllegalStateException("bank auth info was null");
+                throw new IllegalStateException("BankAuthInfo is null");
             }
             if (shouldRefreshAccessToken()) {
                 Log.d(TAG, "bank token expired");

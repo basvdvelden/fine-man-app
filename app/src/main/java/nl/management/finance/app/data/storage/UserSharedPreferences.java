@@ -14,6 +14,7 @@ public class UserSharedPreferences {
     private final SharedPreferences sharedPrefs;
 
     private static class Keys {
+        private static final String MOST_RECENT_BANK = "mostRecentBank";
         private static final String HAS_REGISTERED_PIN = "hasRegisteredPin";
         private static final String TOKEN_TYPE = "tokenType";
         private static final String ACCESS_TOKEN = "accessToken";
@@ -80,6 +81,17 @@ public class UserSharedPreferences {
             return sharedPrefs.getString(Keys.REFRESH_TOKEN, null);
         }
         throw new NullPointerException("refresh token is null");
+    }
+
+    public void setMostRecentBank(String bankName) {
+        this.sharedPrefs.edit().putString(Keys.MOST_RECENT_BANK, bankName).apply();
+    }
+
+    public String getMostRecentBank() {
+        if (sharedPrefs.contains(Keys.MOST_RECENT_BANK)) {
+            return sharedPrefs.getString(Keys.MOST_RECENT_BANK, null);
+        }
+        throw new NullPointerException("most recent bank is null");
     }
 
     public void wipeHasRegisteredPin() {

@@ -6,7 +6,7 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "bank_account", indices = @Index({"iban", "resource_id"}))
+@Entity(tableName = "bank_account", indices = @Index(value = {"iban", "resourceId"}, unique = true))
 public class BankAccount {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
@@ -36,7 +36,7 @@ public class BankAccount {
     private Double balance;
 
     @NonNull
-    @ColumnInfo(name = "resource_id")
+    @ColumnInfo(name = "resourceId")
     private String resourceId;
 
     public BankAccount(int bankId, @NonNull String userId, @NonNull String name,

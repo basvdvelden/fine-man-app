@@ -13,19 +13,17 @@ import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import dagger.android.support.AndroidSupportInjection;
 import nl.management.finance.app.R;
+import nl.management.finance.app.UserSubject;
 import nl.management.finance.app.UserViewModel;
 import nl.management.finance.app.di.DaggerViewModelFactory;
-import nl.management.finance.app.ui.UIResult;
 import nl.management.finance.app.ui.setup.SetupViewModel;
 
 import java.util.Arrays;
@@ -45,14 +43,17 @@ public class PinFragment extends Fragment implements View.OnClickListener {
 
     // VERIFYING state fields
     private VerifyPinViewModel verifyViewModel = null;
+    private boolean onNewPhone;
+    @Inject
+    UserSubject userSubject;
 
     // REGISTERING state fields
     private boolean firstPinEntered;
     private RegisterPinViewModel registerViewModel = null;
-    private SetupViewModel setupViewModel = null;
 
     @Inject
     DaggerViewModelFactory viewModelFactory;
+    private SetupViewModel setupViewModel;
 
     private enum State {
         UNDECIDED,
@@ -62,8 +63,7 @@ public class PinFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_pin, null);
-        return root;
+        return inflater.inflate(R.layout.fragment_pin, null);
     }
 
     @Override
@@ -73,20 +73,21 @@ public class PinFragment extends Fragment implements View.OnClickListener {
         navController = Navigation.findNavController(view);
         userViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(UserViewModel.class);
+        setupViewModel = ViewModelProviders.of(this, viewModelFactory)
+                .get(SetupViewModel.class);
         userViewModel.hasRegisteredPin().observe(this, (hasRegisteredPin) -> {
-            Log.d(TAG, "observed has registered pin");
             setStateToUndecided();
             if (hasRegisteredPin.getSuccess() != null) {
                 Boolean value = hasRegisteredPin.getSuccess();
                 Log.d(TAG, value.toString());
                 if (value) {
                     setStateToVerifying();
+
                 } else {
                     setStateToRegistering();
                 }
             }
         });
-
         boolean exitOnBack = requireArguments().getBoolean("exitOnBack");
         if (exitOnBack) {
             requireActivity().getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
@@ -114,7 +115,6 @@ public class PinFragment extends Fragment implements View.OnClickListener {
         this.state = State.UNDECIDED;
         this.verifyViewModel = null;
         this.registerViewModel = null;
-        this.setupViewModel = null;
         TextView pinText = requireView().findViewById(R.id.pinText);
         pinText.setText(null);
     }
@@ -124,29 +124,24 @@ public class PinFragment extends Fragment implements View.OnClickListener {
         this.firstPinEntered = false;
         this.registerViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(RegisterPinViewModel.class);
-        this.setupViewModel = ViewModelProviders.of(this, viewModelFactory)
-                .get(SetupViewModel.class);
         TextView pinText = requireView().findViewById(R.id.pinText);
         pinText.setText(R.string.register_pin1);
         setObserversRegisteringState();
     }
 
     private void setObserversRegisteringState() {
-        registerViewModel.getPinFormState().observe(this, new Observer<PinFormState>() {
-            @Override
-            public void onChanged(@Nullable PinFormState pinFormState) {
-                if (pinFormState == null) {
-                    return;
-                }
+        registerViewModel.getPinFormState().observe(this, pinFormState -> {
+            if (pinFormState == null) {
+                return;
+            }
 
-                if (pinFormState.getPinError() != null) {
-                    showToastMessage(pinFormState.getPinError());
-                    reset();
-                } else if (pinFormState.isDataValid()) {
-                    setupViewModel.setPin(registerViewModel.getPin());
-                    registerViewModel.initial();
-                    navController.navigate(R.id.action_pinFragment_to_setupFragment);
-                }
+            if (pinFormState.getPinError() != null) {
+                showToastMessage(pinFormState.getPinError());
+                reset();
+            } else if (pinFormState.isDataValid()) {
+                setupViewModel.setPin(registerViewModel.getPin());
+                registerViewModel.initial();
+                navController.navigate(R.id.action_pinFragment_to_setupFragment);
             }
         });
     }
@@ -160,6 +155,9 @@ public class PinFragment extends Fragment implements View.OnClickListener {
     }
 
     private void setStateToVerifying() {
+        userSubject.getUser().subscribe(user -> {
+            this.onNewPhone = user.get() == null;
+        });
         this.state = State.VERIFYING;
         this.verifyViewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(VerifyPinViewModel.class);
@@ -169,27 +167,40 @@ public class PinFragment extends Fragment implements View.OnClickListener {
     }
 
     private void setObserversVerifyingState() {
-        verifyViewModel.getPinVerificationResult().observe(this, new Observer<UIResult<Void>>() {
-            @Override
-            public void onChanged(UIResult<Void> result) {
-                if (result == null) {
-                    return;
-                }
-                if (result.getError() == null) {
-                    Log.i(TAG, "pin code correct!");
+        verifyViewModel.getPinVerificationResult().observe(this, result -> {
+            if (result == null) {
+                return;
+            }
+            if (result.getError() == null) {
+                Log.i(TAG, "pin code correct!");
+                if (onNewPhone) {
+                    setupViewModel.getSetupExistingUserResult().observe(this, setupResult -> {
+                        if (setupResult.getError() == null) {
+                            showToastMessage(R.string.pin_verification_successful);
+                            verifyViewModel.initial();
+                            navController.popBackStack(R.id.pinFragment, true);
+                        } else {
+                            showToastMessage(setupResult.getError());
+                            verifyViewModel.resetPin();
+                            uncheckAllRadioButtons();
+                        }
+                    });
+                    setupViewModel.setupExistingUser();
+                } else {
                     showToastMessage(R.string.pin_verification_successful);
                     verifyViewModel.initial();
                     navController.popBackStack(R.id.pinFragment, true);
-                } else {
-                    showToastMessage(result.getError());
-                    verifyViewModel.resetPin();
-                    uncheckAllRadioButtons();
                 }
+            } else {
+                showToastMessage(result.getError());
+                verifyViewModel.resetPin();
+                uncheckAllRadioButtons();
             }
         });
     }
 
-    protected void setOnClickListeners() {
+    private void setOnClickListeners() {
+
         List<Button> buttons = Arrays.asList(
                 requireView().findViewById(R.id.pinButt0),
                 requireView().findViewById(R.id.pinButt1),
@@ -203,9 +214,12 @@ public class PinFragment extends Fragment implements View.OnClickListener {
                 requireView().findViewById(R.id.pinButt9),
                 requireView().findViewById(R.id.pinButtDel)
         );
+
         for (Button button: buttons) {
             button.setOnClickListener(this);
         }
+        Log.e(TAG, (setupViewModel == null ? "NULL" : "ALIVE") + " 230");
+
     }
 
     @Override

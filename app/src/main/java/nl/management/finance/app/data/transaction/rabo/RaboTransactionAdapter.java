@@ -39,7 +39,6 @@ public class RaboTransactionAdapter implements TransactionAdapter {
 
     private List<TransactionDto> toDtos(RaboTransactions raboTransactions) {
         List<TransactionDto> result = new ArrayList<>();
-        Log.e(TAG, raboTransactions.getAccount().getIban());
         List<RaboTransaction> bookedTransactions = raboTransactions.getTransactions().getBooked();
         for (RaboTransaction bookedTransaction : bookedTransactions) {
             Log.e(TAG, bookedTransaction.toString());

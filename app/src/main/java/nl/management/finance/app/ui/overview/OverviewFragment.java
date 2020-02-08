@@ -27,13 +27,12 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import dagger.android.support.AndroidSupportInjection;
 import nl.authentication.management.app.ui.AuthViewModel;
 import nl.management.finance.app.R;
 import nl.management.finance.app.UserContext;
-import nl.management.finance.app.UserViewModel;
 import nl.management.finance.app.di.DaggerViewModelFactory;
-import nl.management.finance.app.ui.overview.model.BankAccountView;
 
 public class OverviewFragment extends Fragment {
     private static final String TAG = "OverviewFragment";
@@ -45,6 +44,7 @@ public class OverviewFragment extends Fragment {
     private RecyclerView recyclerView;
     private BankAccountBalancesAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    private SwipeRefreshLayout mBaRefreshLayout;
 
     private List<BankAccountView> bankAccounts = new ArrayList<>();
 
@@ -69,6 +69,7 @@ public class OverviewFragment extends Fragment {
                 .get(OverviewViewModel.class);
         loadingProgressBar = requireView().findViewById(R.id.loading);
 
+        mBaRefreshLayout = view.findViewById(R.id.ba_swipe_refresh);
         recyclerView = requireView().findViewById(R.id.bank_account_balances);
         layoutManager = new LinearLayoutManager(requireContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -77,7 +78,7 @@ public class OverviewFragment extends Fragment {
         adapter.getPositionClicks().subscribe((bankAccount) -> {
             Log.d(TAG, navController.getCurrentDestination().getLabel().toString());
             Bundle args = new Bundle();
-            args.putString("iban", bankAccount.getIban());
+            args.putString("bankAccountId", bankAccount.getId());
             navController.navigate(R.id.action_mainFragment_to_transactionFragment, args);
         });
         recyclerView.setAdapter(adapter);
@@ -89,6 +90,14 @@ public class OverviewFragment extends Fragment {
                 bankAccounts.addAll(bankAccountViews);
                 adapter.notifyDataSetChanged();
             }
+            if (mBaRefreshLayout.isRefreshing()) {
+                mBaRefreshLayout.setRefreshing(false);
+            }
+        });
+
+        Button transferButt = view.findViewById(R.id.initiate_payment);
+        transferButt.setOnClickListener((v) -> {
+            navController.navigate(R.id.action_mainFragment_to_transferFragment);
         });
 
         boolean exitOnBack = requireArguments().getBoolean("exitOnBack");
@@ -108,9 +117,9 @@ public class OverviewFragment extends Fragment {
 
     private void setListeners() {
         Button mClickButton2 = requireView().findViewById(R.id.button2);
-        mClickButton2.setOnClickListener(v -> {
-            loginViewModel.logout();
-        });
+        mClickButton2.setOnClickListener(v -> loginViewModel.logout());
+        mBaRefreshLayout.setOnRefreshListener(() -> overviewViewModel.refreshBankAccounts(() ->
+                mBaRefreshLayout.setRefreshing(false)));
     }
 
     private void showErrorString(@StringRes Integer error) {

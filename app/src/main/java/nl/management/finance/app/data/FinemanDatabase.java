@@ -22,7 +22,7 @@ import nl.management.finance.app.data.user.UserDao;
 import nl.management.finance.app.data.userbank.UserBank;
 import nl.management.finance.app.data.userbank.UserBankDao;
 
-@Database(entities = {User.class, UserBank.class, Bank.class, BankAccount.class, Transaction.class}, version = 28)
+@Database(entities = {User.class, UserBank.class, Bank.class, BankAccount.class, Transaction.class}, version = 37)
 public abstract class FinemanDatabase extends RoomDatabase {
     private static final String DB_NAME = "fineman_db";
     private static FinemanDatabase instance;

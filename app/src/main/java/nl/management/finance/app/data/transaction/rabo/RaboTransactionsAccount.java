@@ -1,6 +1,6 @@
 package nl.management.finance.app.data.transaction.rabo;
 
-class RaboTransactionsAccount {
+public class RaboTransactionsAccount {
     private String bban;
     private String currency;
     private String iban;

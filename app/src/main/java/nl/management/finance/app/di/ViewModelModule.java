@@ -10,6 +10,7 @@ import nl.authentication.management.app.di.LoginModule;
 import nl.authentication.management.app.ui.AuthViewModel;
 import nl.management.finance.app.NavHostViewModel;
 import nl.management.finance.app.UserViewModel;
+import nl.management.finance.app.ui.transfer.TransferViewModel;
 import nl.management.finance.app.ui.overview.OverviewViewModel;
 import nl.management.finance.app.ui.pin.VerifyPinViewModel;
 import nl.management.finance.app.ui.pin.RegisterPinViewModel;
@@ -61,4 +62,9 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(TransactionViewModel.class)
     public abstract ViewModel bindTransactionViewModel(TransactionViewModel transactionViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TransferViewModel.class)
+    public abstract ViewModel bindPaymentViewModel(TransferViewModel transferViewModel);
 }

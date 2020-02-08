@@ -3,6 +3,7 @@ package nl.management.finance.app.ui.transactions;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,8 +51,8 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            transactionDebtor = (TextView) view.findViewById(R.id.transaction_debtor);
-            transactionAmount = (TextView) view.findViewById(R.id.transaction_amount);
+            transactionDebtor = view.findViewById(R.id.transaction_debtor);
+            transactionAmount = view.findViewById(R.id.transaction_amount);
         }
 
         @Override

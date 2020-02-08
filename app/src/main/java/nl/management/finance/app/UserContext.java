@@ -1,12 +1,13 @@
 package nl.management.finance.app;
 
-import java.net.UnknownServiceException;
 import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import nl.authentication.management.app.LoginNotifier;
+import nl.authentication.management.app.data.login.LoggedInUser;
+import nl.management.finance.app.data.bankaccount.BankAccount;
 import nl.management.finance.app.data.user.User;
 
 
@@ -17,18 +18,21 @@ public class UserContext {
     private String username;
     private String bankName;
     private User user;
+    private BankAccount account;
+    private BankAccount counterAccount;
     private String consentCode;
     private LoginNotifier loginNotifier;
 
     @Inject
     public UserContext(LoginNotifier loginNotifier, UserSubject userSubject) {
         this.loginNotifier = loginNotifier;
-        this.loginNotifier.getLoggedInSubject().subscribe((loggedInUser) -> {
+        this.loginNotifier.getLoggedInSubject().subscribe((optLoggedInUser) -> {
+            LoggedInUser loggedInUser = optLoggedInUser.get();
             if (loggedInUser != null) {
                 userDataChanged(loggedInUser.getUserId(), loggedInUser.getDisplayName(), loggedInUser.getUsername());
             }
         });
-        userSubject.get().subscribe(user -> this.user = user.get());
+        userSubject.getUser().subscribe(user -> this.user = user.get());
     }
 
     public void userDataChanged(UUID userId, String displayName, String username) {
@@ -88,5 +92,21 @@ public class UserContext {
 
     public void setConsentCode(String consentCode) {
         this.consentCode = consentCode;
+    }
+
+    public BankAccount getAccount() {
+        return account;
+    }
+
+    public void setAccount(BankAccount account) {
+        this.account = account;
+    }
+
+    public BankAccount getCounterAccount() {
+        return counterAccount;
+    }
+
+    public void setCounterAccount(BankAccount counterAccount) {
+        this.counterAccount = counterAccount;
     }
 }

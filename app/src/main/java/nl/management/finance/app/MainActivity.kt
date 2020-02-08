@@ -17,62 +17,49 @@
 package nl.management.finance.app
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import nl.management.finance.app.R
-import nl.management.finance.app.setupWithNavController
 
 /**
  * An activity that inflates a layout that has a [BottomNavigationView].
  */
 class MainActivity : AppCompatActivity() {
-
-    private var currentNavController: LiveData<NavController>? = null
-
+    lateinit var bottomNavigationView: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            setupBottomNavigationBar()
-        } // Else, need to wait for onRestoreInstanceState
+        setupNavigation()
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
-        super.onRestoreInstanceState(savedInstanceState)
-        // Now that BottomNavigationBar has restored its instance state
-        // and its selectedItemId, we can proceed with setting up the
-        // BottomNavigationBar with Navigation
-        setupBottomNavigationBar()
+    private fun setupNavigation() {
+        bottomNavigationView = findViewById(R.id.bottom_nav)
+        var navHost: AppNavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
+                as AppNavHostFragment
+        NavigationUI.setupWithNavController(bottomNavigationView, navHost.navController)
+        navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
+            Log.e("MainActivity", destination.label.toString())
+            when(destination.id) {
+                R.id.pinFragment -> bottomNavigationView.visibility = View.GONE
+                R.id.loginFragment -> bottomNavigationView.visibility = View.GONE
+                R.id.registerFragment -> bottomNavigationView.visibility = View.GONE
+                R.id.setupFragment -> bottomNavigationView.visibility = View.GONE
+                else -> showIfHidden()
+            }
+        }
     }
 
-    /**
-     * Called on first creation and when restoring state.
-     */
-    private fun setupBottomNavigationBar() {
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
-
-        val navGraphIds = listOf(R.navigation.overview_nav_graph, R.navigation.help_nav_graph, R.navigation.settings_nav_graph)
-
-        // Setup the bottom navigation view with a list of navigation graphs
-        val controller = bottomNavigationView.setupWithNavController(
-                navGraphIds = navGraphIds,
-                fragmentManager = supportFragmentManager,
-                containerId = R.id.nav_host_container,
-                intent = intent
-        )
-
-//        // Whenever the selected controller changes, setup the action bar.
-//        controller.observe(this, Observer { navController ->
-//            setupActionBarWithNavController(navController)
-//        })
-        currentNavController = controller
+    private fun showIfHidden() {
+        if (bottomNavigationView.visibility == View.GONE) {
+            bottomNavigationView.visibility = View.VISIBLE
+        }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return currentNavController?.value?.navigateUp() ?: false
-    }
 }
+

@@ -1,7 +1,5 @@
 package nl.management.finance.app.data.bankaccount;
 
-import android.util.Log;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Currency;
@@ -10,7 +8,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import nl.management.finance.app.UserContext;
-import nl.management.finance.app.ui.overview.model.BankAccountView;
+import nl.management.finance.app.ui.overview.BankAccountView;
 
 public class BankAccountMapper {
     private final UserContext context;
@@ -44,7 +42,7 @@ public class BankAccountMapper {
         }
         balance = Currency.getInstance(bankAccount.getCurrency()).getSymbol() + balance;
 
-        return new BankAccountView(bankAccount.getName(), bankAccount.getIban(),
+        return new BankAccountView(bankAccount.getResourceId(), bankAccount.getName(), bankAccount.getIban(),
                 balance, bankAccount.getCurrency());
     }
 }
