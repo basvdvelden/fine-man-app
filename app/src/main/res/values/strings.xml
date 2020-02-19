@@ -1,3 +1,7 @@
+
+<!DOCTYPE resources [
+    <!ENTITY currencyNaN "(Not available)">
+    ]>
 <resources>
     <string name="pin_1">1\n</string>
     <string name="pin_2">2\nabc</string>
@@ -32,10 +36,14 @@
     <string name="go_button_text">go</string>
     <string name="bank_accounts_title_text">Accounts</string>
 
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="undo">UNDO</string>
+
+    <string name="setup_account">setup</string>
 
     <!--bank names-->
     <string name="rabobank">Rabobank</string>
-    <string name="setup_account">setup</string>
 
     <string-array name="banks">
         <item>…</item>
@@ -45,12 +53,98 @@
 
     <!-- Transfer fragment -->
     <string name="transfer_amount_hint">Amount</string>
+    <string name="transfer_currency_hint">Currency</string>
     <string name="receivers_name_hint">Receiver\'s name</string>
     <string name="receivers_iban_hint">Receiver\'s account (IBAN)</string>
     <string name="transfer_description_hint">Transfer description</string>
     <string name="transfer_payment_ref_hint">Payment reference</string>
+    <string name="transfer_exec_date_hint">Payment date</string>
     <string name="transfer_bank_account_error">Amount too high!</string>
     <string name="transfer_receivers_name_empty_error">Receiver\'s name can\'t be empty!</string>
     <string name="transfer_receivers_iban_error">This iban is not valid!</string>
     <string name="transfer_description_error">Description too long!</string>
+    <string name="transfer_button">transfer</string>
+
+    <!-- Used in code to check if the selected currency is enabled/supported. -->
+    <string name="currency_not_available">&currencyNaN;</string>
+
+    <!-- Currencies -->
+    <string name="currency_eur">&#8364; Euro EUR</string>
+    <string name="currency_usd">&#36; US Dollar USD</string>
+    <string name="currency_gbp">&#163; Pound Sterling GBP</string>
+    <string name="currency_chf">&#70; Swiss Franc CHF</string>
+    <string name="currency_sek">&#114; Swedish Krona SEK</string>
+    <string name="currency_pln">&#322; Polish Zloty PLN</string>
+    <string name="currency_thb">&#3647; Thai Baht THB</string>
+    <string name="currency_zar">&#82; South African Rand ZAR</string>
+    <string name="currency_dkk">&#114; Danish Krone DKK</string>
+    <string name="currency_nok">&#114; Norwegian Krone NOK</string>
+    <string name="currency_aed">&#625; Uae Dirham AED</string>
+    <string name="currency_ang">&#192; Netherlands Antille ANG</string>
+    <string name="currency_aud">&#36; Australian Dollar AUD</string>
+    <string name="currency_bhd">\? Bahraini Dinar BHD</string>
+    <string name="currency_cad">&#36; Canadian Dollar CAD</string>
+    <string name="currency_cny">&#165; Yuan Renminbi CNY</string>
+    <string name="currency_czk">&#269; Czech Koruna CZK</string>
+    <string name="currency_etb">\? Ethiopian Birr ETB</string>
+    <string name="currency_hkd">&#36; Hong Kong Dollar HKD</string>
+    <string name="currency_huf">&#116; Hungarian Forint HUF</string>
+    <string name="currency_idr">&#112; Indonesian Rupiah IDR</string>
+    <string name="currency_ils">&#8362; Israeli Shekel ILS</string>
+    <string name="currency_inr">\? Indian Rupee INR</string>
+    <string name="currency_isk">&#114; Iceland Krona ISK &currencyNaN;</string>
+    <string name="currency_jpy">&#165; Japanese Yen JPY</string>
+    <string name="currency_kes">\? Kenyan Shilling KES</string>
+    <string name="currency_kwd">\? Kuwaiti Dinar KWD</string>
+    <string name="currency_mad">\? Moroccan Dirham MAD</string>
+    <string name="currency_mxn">&#36; Mexican Peso MXN</string>
+    <string name="currency_nzd">&#36; New Zealand Dollar NZD</string>
+    <string name="currency_ron">&#105; Romanian Leu RON</string>
+    <string name="currency_rub">&#1073; Russian Ruble RUB</string>
+    <string name="currency_sar">&#65020; Saudi Riyal SAR</string>
+    <string name="currency_sgd">&#36; Singapore Dollar SGD</string>
+    <string name="currency_tnd">\? Tunisian Dinar TND</string>
+    <string name="currency_try">\? Turkish Lira TRY</string>
+
+    <string-array name="currencies">
+        <item>@string/currency_eur</item>
+        <item>@string/currency_usd</item>
+        <item>@string/currency_gbp</item>
+        <item>@string/currency_chf</item>
+        <item>@string/currency_sek</item>
+        <item>@string/currency_pln</item>
+        <item>@string/currency_thb</item>
+        <item>@string/currency_zar</item>
+        <item>@string/currency_dkk</item>
+        <item>@string/currency_nok</item>
+        <item>@string/currency_aed</item>
+        <item>@string/currency_ang</item>
+        <item>@string/currency_aud</item>
+        <item>@string/currency_bhd</item>
+        <item>@string/currency_cad</item>
+        <item>@string/currency_cny</item>
+        <item>@string/currency_czk</item>
+        <item>@string/currency_etb</item>
+        <item>@string/currency_hkd</item>
+        <item>@string/currency_huf</item>
+        <item>@string/currency_idr</item>
+        <item>@string/currency_ils</item>
+        <item>@string/currency_inr</item>
+        <item>@string/currency_isk</item>
+        <item>@string/currency_jpy</item>
+        <item>@string/currency_kes</item>
+        <item>@string/currency_kwd</item>
+        <item>@string/currency_mad</item>
+        <item>@string/currency_mxn</item>
+        <item>@string/currency_nzd</item>
+        <item>@string/currency_ron</item>
+        <item>@string/currency_rub</item>
+        <item>@string/currency_sar</item>
+        <item>@string/currency_sgd</item>
+        <item>@string/currency_tnd</item>
+        <item>@string/currency_try</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

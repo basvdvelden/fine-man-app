@@ -35,11 +35,10 @@ public abstract class TransactionDao {
         }
     }
 
-    @Query("select bookingDate, ultimateDebtor as debtorName, amount, description, initiatingParty, " +
-            "ultimateCreditor as creditorName from `transaction` " +
-            "where bankAccountId like :bankAccountId")
-    abstract LiveData<List<TransactionView>> getByBankAccountId(String bankAccountId);
+    @Query("select * from `transaction` where bank_account_id like :bankAccountId order by bookingDate desc")
+    abstract LiveData<List<Transaction>> getByBankAccountId(String bankAccountId);
 
+    // TODO: Remove this method.
     @Query("delete from `transaction` where 1=1")
     abstract void deleteAll();
 }

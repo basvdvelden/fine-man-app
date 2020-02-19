@@ -2,7 +2,6 @@ package nl.management.finance.app.ui.setup;
 
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -19,12 +18,11 @@ import nl.authentication.management.app.AppOptional;
 import nl.management.finance.app.R;
 import nl.management.finance.app.UserContext;
 import nl.management.finance.app.UserSubject;
-import nl.management.finance.app.data.bank.BankDom;
 import nl.management.finance.app.data.bank.BankRepository;
 import nl.management.finance.app.data.user.Authentication;
 import nl.management.finance.app.data.user.RegisterDto;
 import nl.management.finance.app.data.Result;
-import nl.management.finance.app.data.userbank.UserBankDom;
+import nl.management.finance.app.data.userbank.UserBankDto;
 import nl.management.finance.app.data.userbank.UserBankRepository;
 import nl.management.finance.app.data.user.UserRepository;
 import nl.management.finance.app.data.bank.Bank;
@@ -35,6 +33,8 @@ import nl.management.finance.app.ui.UIResult;
 @Singleton
 public class SetupViewModel extends ViewModel {
     private static final String TAG = "SetupViewModel";
+    private static final String SCOPES = "ais.balances.read ais.transactions.read-90days ais.transactions.read-history";
+
     private String pin;
     private String bank;
     private String consentCode;
@@ -50,6 +50,10 @@ public class SetupViewModel extends ViewModel {
 
     public MutableLiveData<UIResult<Void>> getSetupExistingUserResult() {
         return setupExistingUserResult;
+    }
+
+    public String getScopes() {
+        return SCOPES;
     }
 
     private enum State {
@@ -84,7 +88,7 @@ public class SetupViewModel extends ViewModel {
     }
 
     public void setupNewUser() {
-        userRepository.setCurrentBank(this.bank, true);
+        bankRepository.setCurrentBank(this.bank, true);
         Observable<AppOptional<Authentication>> authenticateAtBankComp = authenticateAtBankCompletable();
 
         authenticateAtBankComp.subscribe(authentication -> {
@@ -96,9 +100,20 @@ public class SetupViewModel extends ViewModel {
 
     public void setupExistingUser() {
         Completable.fromAction(() -> {
-            boolean success = userRepository.syncUserWithServer();
-            if (success) {
+            Result<User> userResult = userRepository.getUserRemotely();
+            Result<List<UserBank>> userBanksResult = userBankRepository.getUserBanksRemotely();
+            if (userResult instanceof Result.Success && userBanksResult instanceof Result.Success) {
+                User user = ((Result.Success<User>) userResult).getData();
+                userRepository.createUser(user);
 
+                List<UserBank> userBanks = ((Result.Success<List<UserBank>>) userBanksResult).getData();
+                for (UserBank userBank: userBanks) {
+                    userBankRepository.createUserBank(userBank, false);
+                }
+                UserBank ub = userBanks.get(0);
+                userBankRepository.updateBankAuthInfo(ub.getTokenType(), ub.getExpiresAt(),
+                        ub.getAccessToken(), ub.getRefreshToken(), false);
+                bankRepository.setCurrentBank(ub.getBankId(), true);
                 setupExistingUserResult.postValue(new UIResult<>(null));
             } else {
                 setupExistingUserResult.postValue(new UIResult<>(R.string.server_error));
@@ -112,19 +127,31 @@ public class SetupViewModel extends ViewModel {
             Log.d(TAG, "registering");
             RegisterDto dto = new RegisterDto();
             dto.setPin(pin);
-            dto.setConsentCode(consentCode);
-            dto.setBank(bank);
-            dto.setAccessToken(auth.getAccessToken());
-            dto.setTokenType(auth.getTokenType());
-            dto.setExpiresAt(auth.getExpiresAt());
-            dto.setRefreshToken(auth.getRefreshToken());
             Result<Void> result = userRepository.register(dto);
+
             if (result instanceof Result.Success) {
-                // TODO: basically same as user subject // no its probably not
+                User user = new User(userContext.getUserId().toString());
+                userRepository.createUser(user);
                 userRepository.setHasUserRegisteredPin(true);
                 userSubject.setPin(pin);
-                setupLocally(auth);
+
+                UserBank userBank = new UserBank();
+                userBank.setUserId(userContext.getUserId().toString());
+                userBank.setConsentCode(consentCode);
+                userBank.setBankId(bankRepository.getBankId(this.bank));
+                userBank.setAccessToken(auth.getAccessToken());
+                userBank.setTokenType(auth.getTokenType());
+                userBank.setExpiresAt(auth.getExpiresAt());
+                userBank.setRefreshToken(auth.getRefreshToken());
+                userBank.setScopes(SCOPES);
+                userBankRepository.createUserBank(userBank, true);
+
+                userBankRepository.updateBankAuthInfo(auth.getTokenType(), auth.getExpiresAt(),
+                        auth.getAccessToken(), auth.getRefreshToken(), false);
+
                 setupNewUserResult.postValue(new UIResult<>(null));
+            } else {
+                setupNewUserResult.postValue(new UIResult<>(R.string.server_error));
             }
             Log.d(TAG, "finished registering");
         }).subscribeOn(Schedulers.io())
@@ -145,24 +172,6 @@ public class SetupViewModel extends ViewModel {
             }
         }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
-    }
-
-    private void setupLocally(Authentication auth) {
-        userRepository.updateBankAuthInfo(auth.getTokenType(), auth.getExpiresAt(), auth.getAccessToken(), auth.getRefreshToken(), false);
-        User user = new User(userContext.getUserId().toString(), userContext.getUsername());
-        Bank bank = bankRepository.getBankByName(this.bank);
-        UserBank userBank = new UserBank();
-        userBank.setRefreshToken(auth.getRefreshToken());
-        userBank.setAccessToken(auth.getAccessToken());
-        userBank.setExpiresAt(auth.getExpiresAt());
-        userBank.setTokenType(auth.getTokenType());
-        userBank.setUserId(userContext.getUserId().toString());
-        userBank.setBankId(bank.getId());
-        userBank.setConsentCode(consentCode);
-
-        userBankRepository.addUserBankLocally(userBank);
-        userRepository.addUserLocally(user);
-        userSubject.setUser(user);
     }
 
     public LiveData<UIResult<Void>> getSetupNewUserResult() {

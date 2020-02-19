@@ -33,6 +33,9 @@
         android:name="nl.management.finance.app.ui.transfer.TransferFragment"
         android:label="transfer_fragment"
         tools:layout="@layout/fragment_transfer" >
+        <action
+            android:id="@+id/action_transferFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment"/>
     </fragment>
     <action
         android:id="@+id/action_global_helpFragment"
@@ -60,8 +63,24 @@
         android:id="@+id/settingsFragment"
         android:name="nl.management.finance.app.ui.SettingsFragment"
         android:label="settings_fragment"
-        tools:layout="@layout/settings_fragment">
-    </fragment>
+        tools:layout="@layout/settings_fragment" />
+    <action
+        android:id="@+id/action_global_postPaymentFragment"
+        app:destination="@id/postPaymentFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <fragment
+        android:id="@+id/postPaymentFragment"
+        android:name="nl.management.finance.app.ui.postpayment.PostPaymentFragment"
+        android:label="post_payment_fragment"
+        tools:layout="@layout/fragment_post_payment" />
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="nl.management.finance.app.ui.contacts.ContactsFragment"
+        android:label="contacts_fragment"
+        tools:layout="@layout/fragment_contacts" />
     <include app:graph="@navigation/login_nav_graph" />
     <fragment
         android:id="@+id/pinFragment"
@@ -141,9 +160,6 @@
         android:id="@+id/transactionFragment"
         android:name="nl.management.finance.app.ui.transactions.TransactionFragment"
         android:label="fragment_transaction_list"
-        tools:layout="@layout/fragment_transaction_list" >
-        <argument
-            android:name="bankAccountId"
-            app:argType="string" />
+        tools:layout="@layout/fragment_transaction" >
     </fragment>
 </navigation>

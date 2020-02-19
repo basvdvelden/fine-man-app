@@ -50,7 +50,7 @@ public class UserDataSource {
         }
     }
 
-    public Result<Void> verifyPin(String pin, UUID userId) {
+    Result<Void> verifyPin(String pin, UUID userId) {
         try {
             Call<Void> call = api.verifyPin(userId, pin);
             Response<Void> response = call.clone().execute();
@@ -82,7 +82,6 @@ public class UserDataSource {
 
     Result<Void> register(@NonNull UUID userId, @NonNull RegisterDto registerDto) {
         try {
-            Log.w(TAG, registerDto.getBank() + " " + registerDto.getConsentCode() + " " + registerDto.getPin());
             Call<Void> call = api.register(userId, registerDto);
             Response<Void> response = call.clone().execute();
             if (response.isSuccessful()) {
@@ -122,19 +121,6 @@ public class UserDataSource {
         } catch (IOException e) {
             Log.e(TAG, "io error getting users bank", e);
             return new Result.Error(e);
-        }
-    }
-
-    public void updateBankAuthentication(Authentication auth) {
-        try {
-            Response<Void> response = api.updateBankAuthentication(userContext.getUserId().toString(),
-                    String.valueOf(userContext.getBankId()), auth).clone().execute();
-            if (!response.isSuccessful()) {
-                Log.e(TAG, String.format("syncing bank authentication with server failed, response=[code=%d, body=%s]",
-                        response.code(), response.errorBody()));
-            }
-        } catch (IOException e) {
-            Log.e(TAG, "syncing bank authentication with server failed, ERROR:", e);
         }
     }
 }

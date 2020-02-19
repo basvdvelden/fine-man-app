@@ -10,7 +10,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
-import nl.management.finance.app.ui.overview.BankAccountView;
 
 @Dao
 public abstract class BankAccountDao {
@@ -18,29 +17,48 @@ public abstract class BankAccountDao {
     abstract List<Long> insertBankAccounts(List<BankAccount> bankAccounts);
 
     @Update
-    abstract void updateBankAccounts(List<BankAccount> bankAccounts);
-
-    @Query("select resourceId as id, name, iban, balance, currency from bank_account where user_id like :userId")
-    abstract LiveData<List<BankAccountView>> getBankAccountsForUI(String userId);
+    abstract int updateBankAccounts(List<BankAccount> bankAccounts);
 
     @Query("select * from bank_account where user_id like :userId")
-    abstract List<BankAccount> getBankAccounts(String userId);
+    abstract LiveData<List<BankAccount>> getBankAccounts(String userId);
 
     @Query("select * from bank_account where iban like :iban")
     abstract BankAccount getByIban(String iban);
 
+    // TODO: Remove this method.
+    @Query("delete from `bank_account` where 1=1")
+    abstract void deleteAll();
+
     @Transaction
-    public void upsertBankAccounts(List<BankAccount> bankAccounts) {
+    public List<BankAccount> upsertBankAccounts(List<BankAccount> bankAccounts) {
         List<Long> insertResult = insertBankAccounts(bankAccounts);
         List<BankAccount> updateList = new ArrayList<>();
+        List<Integer> insertedBankAccountsIndices = new ArrayList<>();
 
         for (int i = 0; i < insertResult.size(); i++) {
             if (insertResult.get(i) == -1) {
                 updateList.add(bankAccounts.get(i));
+            } else {
+                insertedBankAccountsIndices.add(i);
             }
         }
         if (!updateList.isEmpty()) {
-            updateBankAccounts(bankAccounts);
+            int updateResult = updateBankAccounts(bankAccounts);
+            if (updateResult == 0 && updateList.size() == bankAccounts.size()) {
+                // Nothing was inserted or updated.
+                return new ArrayList<>();
+            } else if (updateResult == 0) {
+                // Nothing was updated so we return only the inserted bank accounts.
+                List<BankAccount> result = new ArrayList<>();
+                for (Integer index: insertedBankAccountsIndices) {
+                    result.add(bankAccounts.get(index));
+                }
+                return result;
+            }
         }
+
+        // Either all were inserted or some were updated,
+        // since we can't know which bank accounts were updated we return them all.
+        return bankAccounts;
     }
 }

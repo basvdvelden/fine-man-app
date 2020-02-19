@@ -36,9 +36,4 @@ public interface UserApi {
 
     @GET("users/{userId}")
     Call<UserDto> getUser(@Path("userId") String userId);
-
-    @PUT("users/{userId}/banks/{bankId}/auth")
-    Call<Void> updateBankAuthentication(@Path("userId") String userId,
-                                        @Path("bankId") String bankId,
-                                        @Body Authentication auth);
 }

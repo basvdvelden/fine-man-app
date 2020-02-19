@@ -53,7 +53,7 @@
         android:id="@+id/initiate_payment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="transfer"
+        android:text="sepaCreditTransfer"
         app:layout_constraintBottom_toTopOf="@+id/bankAccountsTitle"
         app:layout_constraintStart_toStartOf="@+id/bankAccountsTitle"
         app:layout_constraintTop_toTopOf="parent" />

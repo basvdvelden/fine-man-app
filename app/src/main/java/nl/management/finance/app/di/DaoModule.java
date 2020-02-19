@@ -7,6 +7,7 @@ import dagger.Provides;
 import nl.management.finance.app.data.bankaccount.BankAccountDao;
 import nl.management.finance.app.data.bank.BankDao;
 import nl.management.finance.app.data.FinemanDatabase;
+import nl.management.finance.app.data.contact.ContactDao;
 import nl.management.finance.app.data.transaction.TransactionDao;
 import nl.management.finance.app.data.userbank.UserBankDao;
 import nl.management.finance.app.data.user.UserDao;
@@ -36,5 +37,10 @@ public class DaoModule {
     @Provides
     public TransactionDao provideTransactionDao(Application context) {
         return FinemanDatabase.getInstance(context).transactionDao();
+    }
+
+    @Provides
+    public ContactDao provideContactDao(Application context) {
+        return FinemanDatabase.getInstance(context).contactDao();
     }
 }

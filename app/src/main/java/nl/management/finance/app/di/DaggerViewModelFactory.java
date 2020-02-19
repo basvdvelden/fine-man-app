@@ -13,10 +13,6 @@ import javax.inject.Provider;
 import javax.inject.Singleton;
 
 
-/**
- * ViewModel provider factory to instantiate LoginViewModel.
- * Required given LoginViewModel has a non-empty constructor
- */
 @Singleton
 public class DaggerViewModelFactory implements ViewModelProvider.Factory {
 

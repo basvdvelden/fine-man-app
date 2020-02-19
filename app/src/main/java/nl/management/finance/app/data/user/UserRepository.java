@@ -2,8 +2,6 @@ package nl.management.finance.app.data.user;
 
 import android.util.Log;
 
-import com.google.android.gms.auth.api.Auth;
-
 import java.util.List;
 
 import javax.inject.Inject;
@@ -18,7 +16,6 @@ import nl.management.finance.app.UserContext;
 import nl.management.finance.app.UserSubject;
 import nl.management.finance.app.data.Result;
 import nl.management.finance.app.data.api.BankAuthNotifier;
-import nl.management.finance.app.data.bank.BankMapper;
 import nl.management.finance.app.data.storage.UserCache;
 import nl.management.finance.app.data.storage.UserSharedPreferences;
 import nl.management.finance.app.data.userbank.UserBank;
@@ -33,32 +30,24 @@ public class UserRepository {
     private final UserSharedPreferences userSharedPrefs;
     private final UserContext userContext;
     private final UserDao userDao;
-    private final UserBankDao userBankDao;
-    private final BankAuthNotifier bankAuthNotifier;
+    private final UserMapper userMapper;
     private final UserSubject userSubject;
-    private final BankMapper bankMapper;
     private final AuthNotifier authNotifier;
 
     @Inject
     public UserRepository(UserDataSource userDataSource, UserCache userCache,
                           UserSharedPreferences userSharedPrefs, UserContext userContext,
-                          UserDao userDao, UserBankDao userBankDao, BankAuthNotifier bankAuthNotifier,
-                          LoginNotifier loginNotifier, UserSubject userSubject, BankMapper bankMapper,
+                          UserDao userDao, UserMapper userMapper, LoginNotifier loginNotifier,
+                          UserSubject userSubject,
                           AuthNotifier authNotifier) {
         this.userDataSource = userDataSource;
         this.userCache = userCache;
         this.userSharedPrefs = userSharedPrefs;
         this.userContext = userContext;
         this.userDao = userDao;
-        this.userBankDao = userBankDao;
-        this.bankAuthNotifier = bankAuthNotifier;
+        this.userMapper = userMapper;
         this.userSubject = userSubject;
-        this.bankMapper = bankMapper;
         this.authNotifier = authNotifier;
-        this.bankAuthNotifier.getUpdatedAuthentication().subscribe(authentication -> {
-            updateBankAuthInfo(authentication.getTokenType(), authentication.getExpiresAt(),
-                    authentication.getAccessToken(), authentication.getRefreshToken(), true);
-        });
         loginNotifier.getLoggedInSubject().subscribe(optLoggedInUser -> {
             LoggedInUser loggedInUser = optLoggedInUser.get();
             if (loggedInUser != null) {
@@ -69,25 +58,7 @@ public class UserRepository {
                 .subscribe();
             }
         });
-        this.userSubject.getUser().subscribe(user -> {
-            if (user.get() != null) {
-                try {
-                    userContext.getBankName();
-                } catch (IllegalStateException e) {
-                    // set current bank if not yet set
-                    setCurrentBank(userSharedPrefs.getMostRecentBank(), false);
-                }
-                Completable.fromAction(() -> {
-                    Authentication auth = userBankDao.getAuthByUserIdAndBankId(
-                            userContext.getUserId().toString(), userContext.getBankId());
-                    this.bankAuthNotifier.updateBankAuthInfo(auth.getTokenType(),
-                            auth.getExpiresAt(), auth.getAccessToken(),
-                            auth.getRefreshToken());
-                }).subscribeOn(Schedulers.io())
-                        .subscribe();
-            }
-        });
-        // TODO: weghalen5
+        // TODO: weghalen
         this.userSharedPrefs.wipeHasRegisteredPin();
     }
 
@@ -132,11 +103,12 @@ public class UserRepository {
         return userDao.getUser(userContext.getUserId().toString());
     }
 
-    public void setCurrentBank(String bankName, boolean saveInSharedPrefs) {
-        this.userContext.setBank(bankName);
-        if (saveInSharedPrefs) {
-            userSharedPrefs.setMostRecentBank(bankName);
+    public Result<User> getUserRemotely() {
+        Result<UserDto> result = userDataSource.getUser();
+        if (result instanceof Result.Success) {
+            return new Result.Success<>(userMapper.toEntity(((Result.Success<UserDto>) result).getData()));
         }
+        return new Result.Error(((Result.Error) result).getError());
     }
 
     public void logout() {
@@ -156,47 +128,11 @@ public class UserRepository {
         return userDataSource.authenticateBank(code);
     }
 
-    public void updateBankAuthInfo(String tokenType, Long expiresAt, String accessToken, String refreshToken,
-                                   boolean updateEntity) {
-        this.bankAuthNotifier.updateBankAuthInfo(tokenType, expiresAt, accessToken, refreshToken);
-
-        if (updateEntity) {
-            Completable.fromAction(() -> {
-                UserBank userBank = userBankDao.getByUserIdAndBankId(userContext.getUserId().toString(), userContext.getBankId());
-                userBank.setTokenType(tokenType);
-                userBank.setExpiresAt(expiresAt);
-                userBank.setAccessToken(accessToken);
-                userBank.setRefreshToken(refreshToken);
-                Authentication auth = new Authentication(accessToken, expiresAt, refreshToken, tokenType);
-                Log.e(TAG, auth.getExpiresAt().toString());
-                userDataSource.updateBankAuthentication(auth);
-                userBankDao.updateUserBank(userBank);
-            }).subscribeOn(Schedulers.io()).subscribe();
-        }
-    }
-
-    public void addUserLocally(User user) {
-        userDao.insertUser(user);
+    public void createUser(User user) {
+        userDao.upsertUser(user);
     }
 
     public void cachePin(String pin) {
         userSubject.setPin(pin);
-    }
-
-    public boolean syncUserWithServer() {
-        Result<UserDto> result = userDataSource.getUser();
-        if (result instanceof Result.Success) {
-            User user = new User(userContext.getUserId().toString(), userContext.getUsername());
-            List<UserBank> userBanks = bankMapper.toUserBankEntities(
-                    ((Result.Success<UserDto>) result).getData().getUserBanks());
-            UserBankDto ub = ((Result.Success<UserDto>) result).getData().getUserBanks().get(0);
-            setCurrentBank(ub.getBank().getName(),
-                    true);
-            updateBankAuthInfo(ub.getTokenType(), ub.getExpiresAt(), ub.getAccessToken(), ub.getRefreshToken(), false);
-            userDao.upsertUser(user);
-            userBankDao.upsertUserBanks(userBanks);
-            return true;
-        }
-        return false;
     }
 }

@@ -1,17 +1,13 @@
 package nl.management.finance.app.data.user;
 
-import java.util.List;
-
-import nl.management.finance.app.data.userbank.UserBankDto;
-
 public class UserDto {
-    private List<UserBankDto> userBanks;
+    private String userId;
 
-    public List<UserBankDto> getUserBanks() {
-        return userBanks;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserBanks(List<UserBankDto> userBanks) {
-        this.userBanks = userBanks;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

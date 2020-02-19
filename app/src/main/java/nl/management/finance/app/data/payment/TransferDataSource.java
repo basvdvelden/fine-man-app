@@ -6,8 +6,6 @@ import nl.management.finance.app.BuildConfig;
 import nl.management.finance.app.UserContext;
 import nl.management.finance.app.data.Result;
 import nl.management.finance.app.data.api.rabo.RaboApi;
-import nl.management.finance.app.data.payment.rabo.RaboPaymentInitiationAdapter;
-import nl.management.finance.app.data.payment.rabo.RaboPaymentInitiationResponse;
 
 class TransferDataSource {
     private final RaboApi raboApi;
@@ -19,13 +17,23 @@ class TransferDataSource {
         this.userContext = userContext;
     }
 
-    public Result<String> initiatePayment(Transfer transfer) {
+    public Result<String> initiatePayment(SepaCreditTransferDto sepaCreditTransfer) {
+        PaymentInitiationAdapter adapter = getAdapter();
+        return adapter.initiatePayment(sepaCreditTransfer);
+    }
+
+    public Result<PaymentStatusResponse> getPaymentStatus(String paymentId) {
+        PaymentInitiationAdapter adapter = getAdapter();
+        return adapter.getPaymentStatus(paymentId);
+    }
+
+    private PaymentInitiationAdapter getAdapter() {
         PaymentInitiationAdapter adapter = null;
         switch (userContext.getBankName()) {
             case BuildConfig
                     .RABO_BANK_NAME:
-                adapter = new RaboPaymentInitiationAdapter(raboApi, userContext);
+                adapter = new RaboPaymentInitiationAdapter(raboApi);
         }
-        return adapter.initiatePayment(transfer);
+        return adapter;
     }
 }

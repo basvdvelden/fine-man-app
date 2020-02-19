@@ -7,19 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.transfer.TransferFragment">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/transfer_payment_ref_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transfer_description_input">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/transfer_payment_ref_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/transfer_payment_ref_hint"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Spinner
         android:id="@+id/transfer_ba_spinner"
         android:layout_width="409dp"
+        android:dropDownWidth="800dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/transfer_amount_input"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transfer_ba_spinner">
 
@@ -35,21 +54,22 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/transfer_receiver_name_input"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/transfer_receiver_iban_input"
+        app:layout_constraintEnd_toStartOf="@+id/contacts_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transfer_amount_input">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/transfer_receiver_name_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/receivers_name_hint"
-                android:inputType="textPersonName"
-                android:singleLine="true" />
+            android:id="@+id/transfer_receiver_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/receivers_name_hint"
+            android:inputType="textPersonName"
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -90,20 +110,25 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/transfer_payment_ref_input"
+        android:id="@+id/transfer_exec_date_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transfer_description_input">
+        app:layout_constraintTop_toBottomOf="@+id/transfer_payment_ref_input">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/transfer_payment_ref_edit_text"
+            android:id="@+id/transfer_exec_date_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:duplicateParentState="false"
+            android:editable="false"
             android:ems="10"
-            android:hint="@string/transfer_payment_ref_hint"
-            android:inputType="textPersonName" />
+            android:focusable="false"
+            android:hint="@string/transfer_exec_date_hint"
+            android:inputType="date" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,16 +137,35 @@
         android:layout_width="212dp"
         android:layout_height="53dp"
         android:text="Options for periodic payments"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transfer_payment_ref_input" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/transfer_button"
         android:layout_width="240dp"
         android:layout_height="51dp"
-        android:text="Transfer"
+        android:text="@string/transfer_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transfer_coming_soon" />
+        app:layout_constraintTop_toBottomOf="@+id/transfer_exec_date_input" />
+
+    <Spinner
+        android:id="@+id/currency_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/transfer_amount_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/transfer_amount_input"
+        app:layout_constraintTop_toTopOf="@+id/transfer_amount_input" />
+
+    <Button
+        android:id="@+id/contacts_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contacts"
+        app:layout_constraintBottom_toBottomOf="@+id/transfer_receiver_name_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transfer_amount_input" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

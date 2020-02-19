@@ -46,7 +46,6 @@ public class AppNavHostFragment extends NavHostFragment {
         navHostViewModel.getVerifyPin().observe(this, verifyPin -> this.verifyPin = verifyPin);
 
         loginNotifier.getLoggedInLive().observe(this, loggedInUser -> {
-            Log.e(TAG, "observed logged in user  " + verifyPin);
             isLoggedIn = loggedInUser != null;
 
             if (!isLoggedIn) {
@@ -57,14 +56,18 @@ public class AppNavHostFragment extends NavHostFragment {
                     userViewModel.hasUserRegisteredPin();
                     // pop login off so user cant press back to go to login
                     getNavController().popBackStack(R.id.login_nav_graph, true);
-                    getNavController().navigate(R.id.action_global_pinFragment);
+                    getNavController().navigate(R.id.pinFragment);
                 }
             }
         });
 
         Uri uri = requireActivity().getIntent().getData();
         if (uri != null) {
-            getNavController().navigate(R.id.action_global_setupFragment);
+            if (uri.toString().contains(IntentFilterUrls.POST_AUTH)) {
+                getNavController().navigate(R.id.setupFragment);
+            } else if (uri.toString().contains(IntentFilterUrls.POST_PAYMENT)) {
+                getNavController().navigate(R.id.postPaymentFragment);
+            }
         }
         super.onViewCreated(view, savedInstanceState);
     }

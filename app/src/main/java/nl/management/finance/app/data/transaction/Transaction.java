@@ -11,15 +11,15 @@ public class Transaction {
     @ColumnInfo(name = "id")
     private int id;
 
-    @ColumnInfo(name = "bankAccountId")
+    @ColumnInfo(name = "bank_account_id")
     private String bankAccountId;
+
+    @ColumnInfo(name = "check_id")
+    private String checkId;
 
     @NonNull
     @ColumnInfo(name = "type")
     private String type;
-
-    @ColumnInfo(name = "checkId", index = true)
-    private String checkId;
 
     @NonNull
     @ColumnInfo(name = "bookingDate")
@@ -50,13 +50,13 @@ public class Transaction {
     @ColumnInfo(name = "initiatingParty")
     private String initiatingParty;
 
-    public Transaction(String bankAccountId, @NonNull String type, @NonNull String checkId,
+    public Transaction(String bankAccountId, String checkId, @NonNull String type,
                        @NonNull String bookingDate, @NonNull String debtorName, @NonNull String ultimateDebtor,
                        String creditorName, @NonNull String ultimateCreditor, @NonNull String amount,
                        @NonNull String description, @NonNull String initiatingParty) {
         this.bankAccountId = bankAccountId;
-        this.type = type;
         this.checkId = checkId;
+        this.type = type;
         this.bookingDate = bookingDate;
         this.debtorName = debtorName;
         this.ultimateDebtor = ultimateDebtor;
@@ -84,10 +84,6 @@ public class Transaction {
         return type;
     }
 
-    public String getCheckId() {
-        return checkId;
-    }
-
     @NonNull
     public String getBookingDate() {
         return bookingDate;
@@ -111,6 +107,7 @@ public class Transaction {
         return initiatingParty;
     }
 
+    @NonNull
     public String getUltimateDebtor() {
         return ultimateDebtor;
     }
@@ -122,5 +119,9 @@ public class Transaction {
 
     public String getCreditorName() {
         return creditorName;
+    }
+
+    public String getCheckId() {
+        return checkId;
     }
 }

@@ -33,6 +33,7 @@ import nl.authentication.management.app.ui.AuthViewModel;
 import nl.management.finance.app.R;
 import nl.management.finance.app.UserContext;
 import nl.management.finance.app.di.DaggerViewModelFactory;
+import nl.management.finance.app.ui.transactions.TransactionViewModel;
 
 public class OverviewFragment extends Fragment {
     private static final String TAG = "OverviewFragment";
@@ -76,10 +77,12 @@ public class OverviewFragment extends Fragment {
         adapter = new BankAccountBalancesAdapter(bankAccounts);
 
         adapter.getPositionClicks().subscribe((bankAccount) -> {
-            Log.d(TAG, navController.getCurrentDestination().getLabel().toString());
-            Bundle args = new Bundle();
-            args.putString("bankAccountId", bankAccount.getId());
-            navController.navigate(R.id.action_mainFragment_to_transactionFragment, args);
+            // TODO: Use shared viewModel instead of bundle maybe?
+            TransactionViewModel viewModel = ViewModelProviders.of(this, viewModelFactory)
+                    .get(TransactionViewModel.class);
+            viewModel.setBankAccountId(bankAccount.getId());
+            viewModel.setBankAccountResourceId(bankAccount.getResourceId());
+            navController.navigate(R.id.action_mainFragment_to_transactionFragment);
         });
         recyclerView.setAdapter(adapter);
 

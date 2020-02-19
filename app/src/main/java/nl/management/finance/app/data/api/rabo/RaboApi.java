@@ -3,8 +3,9 @@ package nl.management.finance.app.data.api.rabo;
 import javax.inject.Singleton;
 
 import nl.management.finance.app.data.bankaccount.RaboBankAccounts;
-import nl.management.finance.app.data.payment.rabo.RaboTransfer;
-import nl.management.finance.app.data.payment.rabo.RaboPaymentInitiationResponse;
+import nl.management.finance.app.data.payment.PaymentStatusResponse;
+import nl.management.finance.app.data.payment.SepaCreditTransferDto;
+import nl.management.finance.app.data.payment.PaymentInitiationResponse;
 import nl.management.finance.app.data.transaction.rabo.RaboTransactions;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -35,8 +36,13 @@ public interface RaboApi {
                                            @Query("bookingStatus") String bookingStatus);
 
     @POST("payments/payment-initiation/pis/v1/payments/sepa-credit-transfers")
-    Call<RaboPaymentInitiationResponse> initiatePayment(@Header("PSU-IP-Address") String userIp,
-                                                        @Header("TPP-Redirect-URI") String redirectUri,
-                                                        @Header("Content-Type") String contentType,
-                                                        @Body RaboTransfer body);
+    Call<PaymentInitiationResponse> initiatePayment(@Header("PSU-IP-Address") String userIp,
+                                                    @Header("TPP-Redirect-URI") String redirectUri,
+                                                    @Header("Content-Type") String contentType,
+                                                    @Body SepaCreditTransferDto body);
+
+    @GET("payments/payment-initiation/pis/v1/payments/sepa-credit-transfers/{paymentId}/status")
+    Call<PaymentStatusResponse> getPaymentStatus(@Header("PSU-IP-Address") String userIp,
+                                                 @Header("Content-Type") String contentType,
+                                                 @Path("paymentId") String paymentId);
 }

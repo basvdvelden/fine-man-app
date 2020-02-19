@@ -3,7 +3,6 @@ package nl.management.finance.app.ui.transactions;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,7 @@ public class TransactionRecyclerViewAdapter extends RecyclerView.Adapter<Transac
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_transaction, parent, false);
+                .inflate(R.layout.fragment_transaction_item, parent, false);
         return new ViewHolder(view);
     }
 

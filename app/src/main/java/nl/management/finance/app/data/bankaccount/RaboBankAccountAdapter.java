@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import nl.management.finance.app.BuildConfig;
+import nl.management.finance.app.UserContext;
 import nl.management.finance.app.data.Result;
 import nl.management.finance.app.data.api.rabo.RaboAccountBalance;
 import nl.management.finance.app.data.api.rabo.RaboApi;
@@ -18,9 +20,11 @@ import retrofit2.Response;
 public class RaboBankAccountAdapter implements BankAccountAdapter {
     private static final String TAG = "RaboBankAccountAdapter";
     private final RaboApi api;
+    private final UserContext userContext;
 
-    public RaboBankAccountAdapter(RaboApi api) {
+    public RaboBankAccountAdapter(RaboApi api, UserContext userContext) {
         this.api = api;
+        this.userContext = userContext;
     }
 
     public Result<List<BankAccountDto>> getBankAccounts() {
@@ -33,40 +37,39 @@ public class RaboBankAccountAdapter implements BankAccountAdapter {
                 return new Result.Error(error);
             }
             List<RaboBankAccount> raboAccounts = response.body().getAccounts();
-            return new Result.Success<>(toBankAccountDtos(raboAccounts));
+            List<RaboAccountBalance> raboBalances = new ArrayList<>();
+            for (RaboBankAccount bankAccount: raboAccounts) {
+                raboBalances.add(getBalance(bankAccount.getResourceId()));
+            }
+            return new Result.Success<>(toBankAccountDtos(raboAccounts, raboBalances));
         } catch (IOException e) {
             Log.e(TAG, "io error fetching rabo bank accounts.", e);
             return new Result.Error(e);
         }
     }
 
-    private List<BankAccountDto> toBankAccountDtos(List<RaboBankAccount> raboAccounts) {
+    private RaboAccountBalance getBalance(String resourceId) throws IOException {
+        Response<RaboAccountBalance> response = api.getBalance(resourceId).clone().execute();
+        if (!response.isSuccessful()) {
+            throw new IOException(response.errorBody() != null ? response.errorBody().string() : response.toString());
+        }
+        return response.body();
+    }
+
+    private List<BankAccountDto> toBankAccountDtos(List<RaboBankAccount> raboAccounts,
+                                                   List<RaboAccountBalance> raboBalances) {
         List<BankAccountDto> result = new ArrayList<>();
-        for (RaboBankAccount raboAccount: raboAccounts) {
-            result.add(new BankAccountDto(raboAccount.getName(), raboAccount.getCurrency(),
-                    raboAccount.getIban(), raboAccount.getResourceId()));
+        for (int i = 0; i < raboAccounts.size(); i ++) {
+            RaboBankAccount raboAccount = raboAccounts.get(i);
+            result.add(new BankAccountDto(userContext.getUserId(), BuildConfig.RABO_BANK_ID,
+                    raboAccount.getName(), raboAccount.getCurrency(), raboAccount.getIban(),
+                    raboAccount.getResourceId(), toDouble(raboBalances.get(i))));
         }
 
         return result;
     }
 
-    public Result<Double> getBalance(String resourceId) {
-        try {
-            Call<RaboAccountBalance> call = api.getBalance(resourceId);
-            Response<RaboAccountBalance> response = call.clone().execute();
-            if (!response.isSuccessful()) {
-                Exception error = new Exception(response.errorBody().string());
-                Log.e(TAG, "error getting rabobank account balance", error);
-                return new Result.Error(error);
-            }
-            return new Result.Success<>(toBalanceDto(response.body()));
-        } catch (IOException e) {
-            Log.e(TAG, "io error fetching rabo balance.", e);
-            return new Result.Error(e);
-        }
-    }
-
-    private Double toBalanceDto(RaboAccountBalance raboAccountBalance) {
+    private Double toDouble(RaboAccountBalance raboAccountBalance) {
         String balanceType = "expected";
         for (RaboBalance balance: raboAccountBalance.getBalances()) {
             if (balance.getBalanceType().equals(balanceType)) {

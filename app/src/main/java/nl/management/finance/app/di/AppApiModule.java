@@ -8,11 +8,14 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import nl.management.finance.app.BuildConfig;
+import nl.management.finance.app.data.api.ContactApi;
 import nl.management.finance.app.data.api.PinCodeInterceptor;
 import nl.management.finance.app.data.api.RaboHeaderInterceptor;
 import nl.management.finance.app.data.api.RaboTokenInterceptor;
 import nl.management.finance.app.data.api.UserApi;
 import nl.management.finance.app.data.api.rabo.RaboApi;
+import nl.management.finance.app.data.bankaccount.BankAccountApi;
+import nl.management.finance.app.data.userbank.UserBankApi;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -56,6 +59,24 @@ public class AppApiModule {
     @Singleton
     public UserApi provideUserApi(@Named("fine") Retrofit retrofit) {
         return retrofit.create(UserApi.class);
+    }
+
+    @Provides
+    @Singleton
+    public UserBankApi provideUserBankApi(@Named("fine") Retrofit retrofit) {
+        return retrofit.create(UserBankApi.class);
+    }
+
+    @Provides
+    @Singleton
+    public ContactApi provideContactApi(@Named("fine") Retrofit retrofit) {
+        return retrofit.create(ContactApi.class);
+    }
+
+    @Provides
+    @Singleton
+    public BankAccountApi provideBankAccountApi(@Named("fine") Retrofit retrofit) {
+        return retrofit.create(BankAccountApi.class);
     }
 
     @Provides

@@ -145,12 +145,22 @@
                       <LayoutPositions />
                     </value>
                   </entry>
+                  <entry key="action_global_postPaymentFragment">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="action_global_settingsFragment">
                     <value>
                       <LayoutPositions />
                     </value>
                   </entry>
                   <entry key="action_global_setupFragment">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="contactsFragment">
                     <value>
                       <LayoutPositions />
                     </value>
@@ -172,7 +182,7 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="overviewFragment">
+                  <entry key="mainFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPositions">
@@ -216,6 +226,11 @@
                           </map>
                         </option>
                       </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="postPaymentFragment">
+                    <value>
+                      <LayoutPositions />
                     </value>
                   </entry>
                   <entry key="rootFragment">
@@ -279,7 +294,17 @@
                   </entry>
                   <entry key="transferFragment">
                     <value>
-                      <LayoutPositions />
+                      <LayoutPositions>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_transferFragment_to_contactsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
                     </value>
                   </entry>
                 </map>

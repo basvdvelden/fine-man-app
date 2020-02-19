@@ -58,7 +58,7 @@ public class RaboHeaderInterceptor implements Interceptor {
                     .addHeader("date", dateString)
                     .addHeader("x-ibm-client-id", BuildConfig.RABO_CLIENT_ID)
                     .build();
-            if (request.url().toString().contains("payment-initiation")) {
+            if (request.url().toString().contains("payment-initiation") && "POST".equals(request.method())) {
                 request = request.newBuilder()
                         .addHeader("signature", getSignatureHeader(requestId, digest, dateString, request.header("TPP-Redirect-URI")))
                         .build();

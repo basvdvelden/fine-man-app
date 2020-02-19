@@ -34,20 +34,27 @@ public class UserBank {
     @ColumnInfo(name = "consent_code")
     private String consentCode;
 
-    public UserBank() {}
-
     @NonNull
-    public String getConsentCode() {
-        return consentCode;
-    }
+    @ColumnInfo(name = "scopes")
+    private String scopes;
+
+    public UserBank() {}
 
     public int getBankId() {
         return bankId;
     }
 
+    public void setBankId(int bankId) {
+        this.bankId = bankId;
+    }
+
     @NonNull
     public String getUserId() {
         return userId;
+    }
+
+    public void setUserId(@NonNull String userId) {
+        this.userId = userId;
     }
 
     @NonNull
@@ -86,15 +93,21 @@ public class UserBank {
         this.refreshToken = refreshToken;
     }
 
+    @NonNull
+    public String getConsentCode() {
+        return consentCode;
+    }
+
     public void setConsentCode(@NonNull String consentCode) {
         this.consentCode = consentCode;
     }
 
-    public void setBankId(int bankId) {
-        this.bankId = bankId;
+    @NonNull
+    public String getScopes() {
+        return scopes;
     }
 
-    public void setUserId(@NonNull String userId) {
-        this.userId = userId;
+    public void setScopes(@NonNull String scopes) {
+        this.scopes = scopes;
     }
 }

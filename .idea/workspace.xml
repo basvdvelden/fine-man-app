@@ -11,43 +11,44 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionRecyclerViewAdapter.java" line="18" />
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java" line="104" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionRecyclerViewAdapter.java" line="17" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java" line="159" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59db0f4c-ddec-48f4-8ccd-b35fc7a2e2db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/IRefreshFinishedCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/PinCodeInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankDom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/Transfer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAddress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAmount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationLink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationLinks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationRemittanceInformationStructured.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTPPMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTransfer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/HelpFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/BankAccountAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFormState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_help.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transfer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava3_rxjava_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/IntentFilterUrls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/AppDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/ContactApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/contact/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/contact/ContactDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/contact/ContactDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/contact/ContactDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/contact/ContactRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentStatusResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/SepaCreditTransferAccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/mapper/ContactMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/mapper/SepaCreditTransferMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/MutableRecyclerViewAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/OnClickRecyclerViewListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/SwipeToDeleteCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/contacts/ContactRecyclerViewAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/contacts/ContactView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/contacts/ContactsFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/contacts/ContactsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/postpayment/PostPaymentFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/CurrencySpinnerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/border_bottom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_white_36dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_contacts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_contacts_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_payment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transaction_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -59,69 +60,90 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/basvdvelden.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/basvdvelden.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava3_rxandroid_3_0_0_SNAPSHOT_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava3_rxandroid_3_0_0_SNAPSHOT_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava3_rxjava_3_0_0_RC7_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/app.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/rabobank.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/server.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/AppNavHostFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/AppNavHostFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/AppOptional.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/NavigationExtensions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserSubject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/FinemanDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/FinemanDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboHeaderInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboHeaderInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboTokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboTokenInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/UserApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/RaboBankAccountAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/RaboBankAccountAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/Transfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/SepaCreditTransfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/SepaCreditTransferAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/RaboPaymentInitiationAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/SepaCreditTransferAmountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationLink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationLinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationLinks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationRemittanceInformationStructured.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/SepaCreditTransferRemittanceInformationStructuredDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTPPMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/common/TPPMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/SepaCreditTransferDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/storage/AppSharedPreferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/storage/AppSharedPreferences.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/storage/UserSharedPreferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/storage/UserSharedPreferences.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionsAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/RaboOAuthAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/RaboOAuthAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/TransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/RegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/RegisterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/ActivityModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/ActivityModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/AppApiModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/AppApiModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/DaggerViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/DaggerViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/DaoModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/DaoModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/ViewModelModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/ViewModelModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountBalancesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountBalancesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/OverviewFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/OverviewFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/OverviewViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/OverviewViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/model/BankAccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/pin/PinFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/pin/PinFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/setup/SetupFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/setup/SetupFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/setup/SetupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/setup/SetupViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionRecyclerViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionRecyclerViewAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/dummy/DummyContent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/bank_account_balance_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/bank_account_balance_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/SepaCreditTransferView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_overview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_overview.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_root.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_root.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_setup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transaction_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transaction_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/help_nav_graph.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/overview_nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/settings_nav_graph.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transaction.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transaction.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transaction_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transfer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_transfer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <ignored path="OAuth2/" />
@@ -196,256 +218,121 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="602">
-                  <caret line="88" selection-start-line="88" selection-end-line="88" />
-                  <folding>
-                    <element signature="e#7185#7186#0" expanded="true" />
-                    <element signature="e#7244#7245#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboHeaderInterceptor.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-704">
-                  <caret line="77" column="65" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="65" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferViewModel.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="466">
-                  <caret line="69" column="98" selection-start-line="69" selection-start-column="98" selection-end-line="69" selection-end-column="98" />
-                  <folding>
-                    <element signature="e#2113#2114#0" expanded="true" />
-                    <element signature="e#2145#2146#0" expanded="true" />
-                    <element signature="e#3465#3466#0" expanded="true" />
-                    <element signature="e#5175#5219#0" expanded="true" />
-                    <element signature="e#5076#5077#0" expanded="true" />
-                    <element signature="e#5189#5190#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/FinemanDatabase.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="578">
-                  <caret line="54" column="86" selection-start-line="54" selection-start-column="86" selection-end-line="54" selection-end-column="86" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTransfer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationRemittanceInformationStructured.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="40" selection-start-line="40" selection-end-line="40" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAmount.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="32" selection-start-line="32" selection-end-line="32" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#262#263#0" expanded="true" />
-                    <element signature="e#300#301#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAddress.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
-                  <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAccount.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferDataSource.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferRepository.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="21" selection-start-line="21" selection-end-line="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAdapter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTPPMessage.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserContext.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1360">
-                  <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#2846#2847#0" expanded="true" />
-                    <element signature="e#2876#2877#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboApi.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferMapper.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/Transfer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#748#749#0" expanded="true" />
-                    <element signature="e#786#787#0" expanded="true" />
-                    <element signature="e#835#836#0" expanded="true" />
-                    <element signature="e#871#872#0" expanded="true" />
-                    <element signature="e#904#905#0" expanded="true" />
-                    <element signature="e#933#934#0" expanded="true" />
-                    <element signature="e#968#969#0" expanded="true" />
-                    <element signature="e#999#1000#0" expanded="true" />
-                    <element signature="e#1037#1038#0" expanded="true" />
-                    <element signature="e#1071#1072#0" expanded="true" />
-                    <element signature="e#1108#1109#0" expanded="true" />
-                    <element signature="e#1141#1142#0" expanded="true" />
-                    <element signature="e#1819#1820#0" expanded="true" />
-                    <element signature="e#1864#1865#0" expanded="true" />
-                    <element signature="e#1909#1910#0" expanded="true" />
-                    <element signature="e#1950#1951#0" expanded="true" />
-                    <element signature="e#1993#1994#0" expanded="true" />
-                    <element signature="e#2032#2033#0" expanded="true" />
-                    <element signature="e#2074#2075#0" expanded="true" />
-                    <element signature="e#2112#2113#0" expanded="true" />
-                    <element signature="e#2155#2156#0" expanded="true" />
-                    <element signature="e#2194#2195#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferAccount.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#293#294#0" expanded="true" />
-                    <element signature="e#324#325#0" expanded="true" />
-                    <element signature="e#355#356#0" expanded="true" />
-                    <element signature="e#382#383#0" expanded="true" />
-                    <element signature="e#477#478#0" expanded="true" />
-                    <element signature="e#504#505#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="87" column="64" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/FinemanDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/AppNavHostFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="65" column="70" selection-start-line="65" selection-start-column="70" selection-end-line="65" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="799">
+              <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+              <folding>
+                <element signature="e#1774#1775#0" expanded="true" />
+                <element signature="e#2619#2620#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="395">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile_vertical" />
-        <option value="resourceFile" />
         <option value="navigationResourceFile" />
         <option value="layoutResourceFile" />
-        <option value="Interface" />
+        <option value="resourceFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -467,6 +354,11 @@
       <find>.toString()</find>
       <find>login</find>
       <find>Id</find>
+      <find>onViewCreat</find>
+      <find>2440004</find>
+      <find>onMove</find>
+      <find>snackbar</find>
+      <find>contact</find>
     </findStrings>
     <replaceStrings>
       <replace>.toString()</replace>
@@ -478,65 +370,65 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionMapper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/AppDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankMapper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDto.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserMapper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBank.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/UserApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserContext.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/RegisterDto.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/setup/SetupFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDataSource.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/setup/SetupViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankMapper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/OverviewViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccount.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/AppApiModule.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserSubject.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboTokenInterceptor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/RaboBankAccountAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDto.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/Transaction.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDto.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionMapper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountMapper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/OverviewFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountMapper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccount.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/bank_account_balance_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/PinCodeInterceptor.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/Authentication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserRepository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboTokenInterceptor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/PaymentViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFormState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferForm.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/TransferViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_transfer.xml" />
-        <option value="$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/ui/login/LoginFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/PaymentInitiationRemittanceInformationStructured.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/PaymentInitiationAccount.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/PaymentInitiationAddress.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/PaymentInitiationAmount.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/TPPPaymentOrder.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transfer/Transfer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferAccount.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/Transfer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentDataSource.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferDataSource.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentRepository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferRepository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionApi.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/storage/AppSharedPreferences.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionRepository.java" />
+        <option value="$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/di/AppApiModule.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboApi.java" />
+        <option value="$PROJECT_DIR$/OAuth2/build.gradle" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/FinemanDatabase.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAccount.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAddress.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationRemittanceInformationStructured.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferMapper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAmount.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTransfer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/AppNavHostFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountRepository.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="765" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1066" />
+    <option name="width" value="1213" />
+    <option name="height" value="988" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -546,20 +438,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
@@ -595,6 +482,14 @@
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="rabo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="bank" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
@@ -610,23 +505,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="payment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="payment" type="462c0819:PsiDirectoryNode" />
-              <item name="rabo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="transaction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -641,81 +519,25 @@
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="userbank" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="di" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="overview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="setup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="transactions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="transfer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="navigation" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="raw" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
@@ -743,23 +565,21 @@
               <item name="OAuth2" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
               <item name="OAuth2" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="di" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
               <item name="OAuth2" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="app" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="ssl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fine-man-app" type="1abcf292:AndroidViewProjectNode" />
@@ -774,6 +594,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tesla-climate" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
@@ -783,14 +604,16 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="PsdUISettings">
+    <option name="TARGET_MODULES_MINIMIZE" value="false" />
     <option name="MODULE_TAB" value="Signing Configs" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="nl.management.finance.app.data.payment" />
-      <recent name="nl.management.finance.app.data.transfer" />
-      <recent name="nl.management.finance.app.data.payment.rabo" />
+      <recent name="nl.management.finance.app.data.bankaccount" />
+      <recent name="nl.management.finance.app.data.bank" />
+      <recent name="nl.management.finance.app.data" />
       <recent name="nl.management.finance.app.data.userbank" />
       <recent name="nl.management.finance.app.data.user" />
     </key>
@@ -803,11 +626,11 @@
       <recent name="nl.management.finance.app.ui" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="nl.management.finance.app.data.transaction" />
       <recent name="nl.management.finance.app.data.payment" />
+      <recent name="nl.management.finance.app.data.common" />
+      <recent name="nl.management.finance.app.mapper" />
       <recent name="nl.management.finance.app.data.payment.rabo" />
-      <recent name="nl.management.finance.app.ui.transfer" />
-      <recent name="nl.management.finance.app.ui.overview" />
-      <recent name="nl.authentication.management.app" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projects\Java\fine-man-app\app\src\main\res\navigation" />
@@ -940,7 +763,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579631352956</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit message">
+      <created>1581170535214</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581170535215</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -956,16 +786,16 @@
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13712242" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.11049285" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
-      <window_info id="Resources Explorer" order="7" />
+      <window_info id="Resources Explorer" order="7" weight="0.4682861" />
       <window_info id="Capture Tool" order="8" />
       <window_info active="true" anchor="bottom" id="Version Control" order="0" sideWeight="0.49960256" visible="true" weight="0.32955405" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.61963433" weight="0.3159486" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.61963433" weight="0.43386245" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32955405" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32955405" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5023847" side_tool="true" weight="0.32955405" />
@@ -973,7 +803,7 @@
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49761525" weight="0.32955405" />
       <window_info anchor="bottom" id="Debug" order="8" />
-      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49682036" weight="0.22675736" />
+      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49682036" weight="0.13605443" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32955405" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -982,318 +812,456 @@
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Preview" order="5" weight="0.3298887" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13712242" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Designer" order="6" />
+      <window_info id="Resources Explorer" order="7" weight="0.3298887" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.49960256" weight="0.32955405" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.61963433" weight="0.43386245" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.32955405" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32955405" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5023847" side_tool="true" weight="0.32955405" />
+      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.6375199" weight="0.29856387" />
+      <window_info anchor="bottom" id="Android Profiler" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49761525" weight="0.32955405" />
+      <window_info anchor="bottom" id="Debug" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49682036" visible="true" weight="0.22675736" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32955405" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.2647059" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" weight="0.3298887" />
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="commit for merging with botnav branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit for merging with botnav branch" />
+    <MESSAGE value="commit message" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit message" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountView.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/ContactApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/ui/login/LoginFormState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/BankAccountAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
+        <state relative-caret-position="255">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountBalancesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="33" column="75" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bank_account_balance_item.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/PinCodeInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="127" column="47" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/Authentication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/BankAuthNotifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" column="54" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="66" />
+        <state relative-caret-position="238">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#913#914#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/user/UserRepository.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboTokenInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/ui/register/RegisterFormState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/ui/AuthViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/android/text/TextWatcher.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFormState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="107">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
           <folding>
-            <element signature="e#1219#1220#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
-            <element signature="e#1611#1612#0" expanded="true" />
-            <element signature="e#1811#1812#0" expanded="true" />
-            <element signature="e#1845#1846#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/ui/login/LoginFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="182" column="13" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.0-alpha03/5c818d7efbd92bee63ab9fba210d3edf659eb7ab/material-1.2.0-alpha03-sources.jar!/com/google/android/material/textfield/TextInputLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="1649" column="14" selection-start-line="1649" selection-start-column="14" selection-end-line="1649" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-29/android.jar!/java/math/BigDecimal.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="250" column="15" selection-start-line="250" selection-start-column="15" selection-end-line="250" selection-end-column="15" />
-          <folding>
-            <element signature="e#6804#6805#0" expanded="true" />
-            <element signature="e#6855#6856#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/PaymentInitiationAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding>
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#1456#1457#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="663">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboAccount.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserSubject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboBalance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboBalanceAmount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/RaboBankAccounts.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboBankAccount.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboAccountBalance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="8" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_transfer.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/RaboBankAccountAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-155">
-          <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+        <state relative-caret-position="557">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="e#2123#2152#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#1615#1616#0" expanded="true" />
+            <element signature="e#1653#1654#0" expanded="true" />
+            <element signature="e#1844#1845#0" expanded="true" />
+            <element signature="e#1873#1874#0" expanded="true" />
+            <element signature="e#1915#1916#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#1981#1982#0" expanded="true" />
+            <element signature="e#2010#2011#0" expanded="true" />
+            <element signature="e#2051#2052#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferDataSource.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+        <state relative-caret-position="357">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="e#1830#1831#0" expanded="true" />
+            <element signature="e#1866#1867#0" expanded="true" />
+            <element signature="e#1900#1901#0" expanded="true" />
+            <element signature="e#1930#1931#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/TransferRepository.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="204">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <folding>
+            <element signature="e#1928#1929#0" expanded="true" />
+            <element signature="e#1953#1954#0" expanded="true" />
+            <element signature="e#1986#1987#0" expanded="true" />
+            <element signature="e#2014#2015#0" expanded="true" />
+            <element signature="e#2054#2055#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#2134#2135#0" expanded="true" />
+            <element signature="e#2161#2162#0" expanded="true" />
+            <element signature="e#2212#2213#0" expanded="true" />
+            <element signature="e#2246#2247#0" expanded="true" />
+            <element signature="e#2283#2284#0" expanded="true" />
+            <element signature="e#2316#2317#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
+            <element signature="e#2391#2392#0" expanded="true" />
+            <element signature="e#2429#2430#0" expanded="true" />
+            <element signature="e#2463#2464#0" expanded="true" />
+            <element signature="e#2518#2519#0" expanded="true" />
+            <element signature="e#2556#2557#0" expanded="true" />
+            <element signature="e#2610#2611#0" expanded="true" />
+            <element signature="e#2647#2648#0" expanded="true" />
+            <element signature="e#2703#2704#0" expanded="true" />
+            <element signature="e#2742#2743#0" expanded="true" />
+            <element signature="e#2781#2782#0" expanded="true" />
+            <element signature="e#2816#2817#0" expanded="true" />
+            <element signature="e#2972#2973#0" expanded="true" />
+            <element signature="e#3002#3003#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/BankAccountView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1018#1019#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/overview/OverviewFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="84" column="82" selection-start-line="84" selection-start-column="82" selection-end-line="84" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="162" column="53" selection-start-line="162" selection-start-column="53" selection-end-line="162" selection-end-column="53" />
+        </state>
+      </provider>
+      <provider editor-type-id="nav-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-986">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1564">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transactions/TransactionViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/setup/SetupFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="88" selection-start-line="88" selection-end-line="89" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        <state relative-caret-position="476">
+          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
           <folding>
-            <element signature="e#597#615#0" expanded="true" />
+            <element signature="e#2288#2289#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboApi.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        <state relative-caret-position="238">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/UserContext.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="e#2846#2847#0" expanded="true" />
-            <element signature="e#2876#2877#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/storage/AppSharedPreferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/di/AppApiModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="44" column="63" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/app.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/rabobank.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/server.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/rabo/RaboApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="46" column="86" selection-start-line="46" selection-start-column="86" selection-end-line="46" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboTokenInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboHeaderInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/rabo/RaboTransactionAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="42" selection-start-line="42" selection-end-line="60" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/ssl/ClientException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OAuth2/build/generated/source/buildConfig/debug/nl/authentication/management/app/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/di/AppApiModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OAuth2/src/main/java/nl/authentication/management/app/ssl/SSLTrustManagerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-327">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OAuth2/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="79" column="69" selection-start-line="79" selection-start-column="69" selection-end-line="79" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="87" column="64" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/transaction/TransactionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/userbank/UserBankRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bank/BankRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1301,144 +1269,24 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/FinemanDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
-          <caret line="54" column="86" selection-start-line="54" selection-start-column="86" selection-end-line="54" selection-end-column="86" />
+          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTPPMessage.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/AppNavHostFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="454">
+          <caret line="65" column="70" selection-start-line="65" selection-start-column="70" selection-end-line="65" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/api/RaboHeaderInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/bankaccount/BankAccountRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-704">
-          <caret line="77" column="65" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationRemittanceInformationStructured.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="799">
+          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
           <folding>
-            <element signature="e#7185#7186#0" expanded="true" />
-            <element signature="e#7244#7245#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="69" column="98" selection-start-line="69" selection-start-column="98" selection-end-line="69" selection-end-column="98" />
-          <folding>
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
-            <element signature="e#3465#3466#0" expanded="true" />
-            <element signature="e#5175#5219#0" expanded="true" />
-            <element signature="e#5076#5077#0" expanded="true" />
-            <element signature="e#5189#5190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAmount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboPaymentInitiationAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/rabo/RaboTransfer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/data/payment/Transfer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding>
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#904#905#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1037#1038#0" expanded="true" />
-            <element signature="e#1071#1072#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1819#1820#0" expanded="true" />
-            <element signature="e#1864#1865#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-            <element signature="e#1993#1994#0" expanded="true" />
-            <element signature="e#2032#2033#0" expanded="true" />
-            <element signature="e#2074#2075#0" expanded="true" />
-            <element signature="e#2112#2113#0" expanded="true" />
-            <element signature="e#2155#2156#0" expanded="true" />
-            <element signature="e#2194#2195#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/management/finance/app/ui/transfer/TransferMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#2619#2620#0" expanded="true" />
           </folding>
         </state>
       </provider>

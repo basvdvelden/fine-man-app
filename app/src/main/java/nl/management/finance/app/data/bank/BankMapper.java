@@ -1,33 +1,29 @@
 package nl.management.finance.app.data.bank;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
-import nl.management.finance.app.data.userbank.UserBank;
-import nl.management.finance.app.data.userbank.UserBankDom;
-import nl.management.finance.app.data.userbank.UserBankDto;
+import nl.management.finance.app.BuildConfig;
 
+@Singleton
 public class BankMapper {
     @Inject
-    public BankMapper() {}
+    public BankMapper() { }
 
-    public List<UserBank> toUserBankEntities(List<UserBankDto> dtos) {
-        List<UserBank> result = new ArrayList<>();
-        for (UserBankDto dto: dtos) {
-            UserBank userBank = new UserBank();
-            userBank.setUserId(dto.getUserId());
-            userBank.setBankId(dto.getBank().getId());
-            userBank.setAccessToken(dto.getAccessToken());
-            userBank.setExpiresAt(dto.getExpiresAt());
-            userBank.setRefreshToken(dto.getRefreshToken());
-            userBank.setTokenType(dto.getTokenType());
-            userBank.setConsentCode(dto.getConsentCode());
-
-            result.add(userBank);
-        }
-        return result;
+    public BankDto toDto(int bankId) {
+        BankDto dto = new BankDto();
+        dto.setId(bankId);
+        dto.setName(getBankName(bankId));
+        return dto;
     }
 
+    private String getBankName(int bankId) {
+        switch (bankId) {
+            case BuildConfig
+                    .RABO_BANK_ID:
+                return BuildConfig.RABO_BANK_NAME;
+            default:
+                throw new IllegalStateException("Couldn't find bank name for id: " + bankId);
+        }
+    }
 }

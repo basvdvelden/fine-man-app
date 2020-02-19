@@ -172,7 +172,6 @@ public class PinFragment extends Fragment implements View.OnClickListener {
                 return;
             }
             if (result.getError() == null) {
-                Log.i(TAG, "pin code correct!");
                 if (onNewPhone) {
                     setupViewModel.getSetupExistingUserResult().observe(this, setupResult -> {
                         if (setupResult.getError() == null) {
@@ -218,7 +217,6 @@ public class PinFragment extends Fragment implements View.OnClickListener {
         for (Button button: buttons) {
             button.setOnClickListener(this);
         }
-        Log.e(TAG, (setupViewModel == null ? "NULL" : "ALIVE") + " 230");
 
     }
 

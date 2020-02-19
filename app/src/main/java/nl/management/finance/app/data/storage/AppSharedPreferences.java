@@ -3,6 +3,9 @@ package nl.management.finance.app.data.storage;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -29,4 +32,5 @@ public class AppSharedPreferences {
     public Boolean getVerifyPin() {
         return this.sharedPrefs.getBoolean(Keys.VERIFY_PIN, true);
     }
+
 }

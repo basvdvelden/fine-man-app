@@ -20,6 +20,7 @@ public class UserSharedPreferences {
         private static final String ACCESS_TOKEN = "accessToken";
         private static final String REFRESH_TOKEN = "refreshToken";
         private static final String EXPIRES_AT = "expiresAt";
+        private static final String PAYMENT_INITIATION_ID = "paymentInitiationId";
     }
 
     @Inject
@@ -92,6 +93,17 @@ public class UserSharedPreferences {
             return sharedPrefs.getString(Keys.MOST_RECENT_BANK, null);
         }
         throw new NullPointerException("most recent bank is null");
+    }
+
+    public void setPaymentInitiationId(String paymentInitiationId) {
+        this.sharedPrefs.edit().putString(Keys.PAYMENT_INITIATION_ID, paymentInitiationId).apply();
+    }
+
+    public String getPaymentInitiationId() {
+        if (sharedPrefs.contains(Keys.PAYMENT_INITIATION_ID)) {
+            return sharedPrefs.getString(Keys.PAYMENT_INITIATION_ID, null);
+        }
+        throw new NullPointerException("payment initiation id is null");
     }
 
     public void wipeHasRegisteredPin() {

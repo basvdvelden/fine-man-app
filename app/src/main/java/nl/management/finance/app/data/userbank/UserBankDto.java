@@ -1,15 +1,17 @@
 package nl.management.finance.app.data.userbank;
 
 import nl.management.finance.app.data.bank.BankDto;
+import nl.management.finance.app.data.user.UserDto;
 
 public class UserBankDto {
-    private String userId;
+    private UserDto user;
     private BankDto bank;
     private String consentCode;
     private String tokenType;
     private String accessToken;
     private Long expiresAt;
     private String refreshToken;
+    private String scopes;
 
     public BankDto getBank() {
         return bank;
@@ -59,11 +61,19 @@ public class UserBankDto {
         this.refreshToken = refreshToken;
     }
 
-    public String getUserId() {
-        return userId;
+    public UserDto getUser() {
+        return user;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUser(UserDto user) {
+        this.user = user;
+    }
+
+    public String getScopes() {
+        return scopes;
+    }
+
+    public void setScopes(String scopes) {
+        this.scopes = scopes;
     }
 }

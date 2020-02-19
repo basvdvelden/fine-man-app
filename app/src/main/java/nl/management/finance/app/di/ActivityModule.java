@@ -5,8 +5,10 @@ import dagger.android.ContributesAndroidInjector;
 import nl.management.finance.app.AppNavHostFragment;
 import nl.management.finance.app.MainActivity;
 import nl.management.finance.app.ui.RootFragment;
+import nl.management.finance.app.ui.contacts.ContactsFragment;
 import nl.management.finance.app.ui.overview.OverviewFragment;
 import nl.management.finance.app.ui.pin.PinFragment;
+import nl.management.finance.app.ui.postpayment.PostPaymentFragment;
 import nl.management.finance.app.ui.setup.SetupFragment;
 import nl.management.finance.app.ui.transactions.TransactionFragment;
 import nl.management.finance.app.ui.transfer.TransferFragment;
@@ -29,4 +31,8 @@ public abstract class ActivityModule {
     abstract TransactionFragment contributeTransactionFragmentInjector();
     @ContributesAndroidInjector
     abstract TransferFragment contributeTransferFragmentInjector();
+    @ContributesAndroidInjector
+    abstract PostPaymentFragment contributePostPaymentFragmentInjector();
+    @ContributesAndroidInjector
+    abstract ContactsFragment contributeContactsFragmentInjector();
 }

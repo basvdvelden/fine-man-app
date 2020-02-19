@@ -1,19 +1,21 @@
 package nl.management.finance.app.data.transaction;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import nl.management.finance.app.BuildConfig;
 import nl.management.finance.app.UserContext;
+import nl.management.finance.app.data.AppDataSource;
 import nl.management.finance.app.data.Result;
 import nl.management.finance.app.data.api.rabo.RaboApi;
 import nl.management.finance.app.data.transaction.rabo.RaboTransactionAdapter;
-import nl.management.finance.app.data.transaction.rabo.TransactionDto;
 
 @Singleton
-public class TransactionDataSource {
+public class TransactionDataSource extends AppDataSource {
+    private static final String TAG = "TransactionDataSource";
     private final RaboApi raboApi;
     private final UserContext context;
 
@@ -23,7 +25,7 @@ public class TransactionDataSource {
         this.context = context;
     }
 
-    public Result<List<TransactionDto>> getTransactions(String bankAccountResourceId) {
+    public Result<List<TransactionDto>> getTransactions(String bankAccountResourceId, UUID bankAccountId) {
         TransactionAdapter adapter;
         switch (context.getBankName()) {
             case BuildConfig.RABO_BANK_NAME:
@@ -32,6 +34,6 @@ public class TransactionDataSource {
             default:
                 throw new RuntimeException(String.format("no bank with name: %s", context.getBankName()));
         }
-        return adapter.getTransactions(bankAccountResourceId);
+        return adapter.getTransactions(bankAccountResourceId, bankAccountId);
     }
 }

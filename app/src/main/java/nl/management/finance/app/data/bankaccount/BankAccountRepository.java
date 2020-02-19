@@ -22,7 +22,7 @@ public class BankAccountRepository {
     private final BankAccountDao bankAccountDao;
     private final UserContext userContext;
     private final BankAccountMapper mapper;
-    private LiveData<List<BankAccountView>> bankAccounts;
+    private LiveData<List<BankAccount>> bankAccounts;
 
     @Inject
     public BankAccountRepository(BankAccountDataSource dataSource, BankAccountDao bankAccountDao,
@@ -32,8 +32,10 @@ public class BankAccountRepository {
         this.bankAccountDao = bankAccountDao;
         this.userContext = userContext;
         this.mapper = mapper;
-        bankAccounts = bankAccountDao.getBankAccountsForUI(userContext.getUserId().toString());
+        bankAccounts = bankAccountDao.getBankAccounts(userContext.getUserId().toString());
+
         Completable.fromAction(() -> {
+            // TODO: Bank accounts are refreshed twice (here and in fragment)
             if (bankAccounts.getValue() == null || bankAccounts.getValue().size() < 1) {
                 refreshBankAccounts();
             }
@@ -41,30 +43,19 @@ public class BankAccountRepository {
         .subscribe();
     }
 
-    public LiveData<List<BankAccountView>> getBankAccounts() {
+    public LiveData<List<BankAccount>> getBankAccounts() {
         return bankAccounts;
-    }
-
-    public List<BankAccount> getBankAccountsNOTUI() {
-        return bankAccountDao.getBankAccounts(userContext.getUserId().toString());
     }
 
     public void refreshBankAccounts() {
         Result<List<BankAccountDto>> bankAccountDtos = dataSource.getBankAccounts();
         if (bankAccountDtos instanceof Result.Success) {
             List<BankAccountDto> dtos = ((Result.Success<List<BankAccountDto>>) bankAccountDtos).getData();
-            List<BankAccount> bankAccounts = new ArrayList<>();
-            for (BankAccountDto dto: dtos) {
-                Result<Double> balanceResult = dataSource.getBalance(dto.getResourceId());
-
-                if (balanceResult instanceof Result.Success) {
-                    Double balance = ((Result.Success<Double>) balanceResult).getData();
-                    bankAccounts.add(mapper.toEntity(dto, balance));
-                } else {
-                    // TODO:
-                }
+            List<BankAccount> actedOn = bankAccountDao.upsertBankAccounts(mapper.toEntity(dtos));
+            boolean bool = true;
+            if (bool == true || actedOn.size() > 0) {
+                dataSource.saveBankAccounts(mapper.toDto(actedOn));
             }
-            bankAccountDao.upsertBankAccounts(bankAccounts);
         } else {
             // TODO:
         }

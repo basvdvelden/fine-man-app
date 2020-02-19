@@ -1,20 +1,27 @@
 package nl.management.finance.app.data.bankaccount;
 
+import java.util.UUID;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import nl.management.finance.app.data.user.User;
 
-@Entity(tableName = "bank_account", indices = @Index(value = {"iban", "resourceId"}, unique = true))
+@Entity(tableName = "bank_account", indices = @Index(value = {"iban", "resource_id"}, unique = true))
 public class BankAccount {
-    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @PrimaryKey
     @ColumnInfo(name = "id")
-    private int id;
+    private String id;
 
     @ColumnInfo(name = "bank_id")
     private int bankId;
 
+    // TODO: Use foreign key annotation.
     @NonNull
     @ColumnInfo(name = "user_id")
     private String userId;
@@ -36,12 +43,13 @@ public class BankAccount {
     private Double balance;
 
     @NonNull
-    @ColumnInfo(name = "resourceId")
+    @ColumnInfo(name = "resource_id")
     private String resourceId;
 
-    public BankAccount(int bankId, @NonNull String userId, @NonNull String name,
+    public BankAccount(@NonNull String id, int bankId, @NonNull String userId, @NonNull String name,
                        @NonNull String currency, @NonNull String iban,
                        @NonNull Double balance, @NonNull String resourceId) {
+        this.id = id;
         this.bankId = bankId;
         this.userId = userId;
         this.name = name;
@@ -51,8 +59,27 @@ public class BankAccount {
         this.resourceId = resourceId;
     }
 
-    public int getId() {
+    @Ignore
+    public BankAccount(int bankId, @NonNull String userId, @NonNull String name,
+                       @NonNull String currency, @NonNull String iban,
+                       @NonNull Double balance, @NonNull String resourceId) {
+        this.id = UUID.randomUUID().toString();
+        this.bankId = bankId;
+        this.userId = userId;
+        this.name = name;
+        this.currency = currency;
+        this.iban = iban;
+        this.balance = balance;
+        this.resourceId = resourceId;
+    }
+
+    @NonNull
+    public String getId() {
         return id;
+    }
+
+    public void setId(@NonNull String id) {
+        this.id = id;
     }
 
     public int getBankId() {
@@ -82,10 +109,6 @@ public class BankAccount {
     @NonNull
     public String getResourceId() {
         return resourceId;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     @NonNull

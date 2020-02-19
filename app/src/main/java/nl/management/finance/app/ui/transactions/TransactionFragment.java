@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,12 +26,8 @@ import javax.inject.Inject;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import dagger.android.support.AndroidSupportInjection;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Completable;
-import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 import nl.authentication.management.app.api.NetworkNotifier;
-import nl.management.finance.app.IRefreshFinishedCallback;
 import nl.management.finance.app.R;
 import nl.management.finance.app.di.DaggerViewModelFactory;
 
@@ -61,7 +56,7 @@ public class TransactionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_transaction_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_transaction, container, false);
 
         // Set the adapter
         RecyclerView rView = view.findViewById(R.id.transaction_list);
@@ -92,11 +87,10 @@ public class TransactionFragment extends Fragment {
         });
         viewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(TransactionViewModel.class);
-        Bundle args = getArguments();
-        String bankAccountId = Objects.requireNonNull(args).getString("bankAccountId");
-        viewModel.getTransactions(bankAccountId).observe(this, transactionViews -> {
-            this.transactions.clear();
-            this.transactions.addAll(transactionViews);
+
+        viewModel.getTransactions().observe(this, transactionViews -> {
+            transactions.clear();
+            transactions.addAll(transactionViews);
             adapter.notifyDataSetChanged();
         });
         viewModel.refreshTransactions(() -> {});

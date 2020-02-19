@@ -30,6 +30,8 @@ import nl.management.finance.app.di.DaggerViewModelFactory;
 
 public class SetupFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     private static final String TAG = "SetupFragment";
+    // TODO: moet in buildconfig
+    private static final String INTENT_FILTER_URL = "http://fine-man.nl/post-auth";
     private Button button;
 
     @Inject
@@ -59,8 +61,8 @@ public class SetupFragment extends Fragment implements AdapterView.OnItemSelecte
         });
 
         Uri uri = requireActivity().getIntent().getData();
-        if (uri != null) {
-            Log.e(TAG, uri.toString());
+        if (uri != null && uri.toString().contains(INTENT_FILTER_URL)) {
+            Log.i(TAG, "filtering intent, url: " + uri.toString());
             String state = uri.getQueryParameter("state");
             String consentCode = uri.getQueryParameter("code");
             setupViewModel.restoreState(state);
@@ -81,9 +83,9 @@ public class SetupFragment extends Fragment implements AdapterView.OnItemSelecte
                 switch (setupViewModel.getBank()) {
                     case "Rabobank":
                         String state = setupViewModel.getPin() + ";" + setupViewModel.getBank();
-                        intentUrl = String.format(
-                                "%s/oauth2/authorize?client_id=%s&response_type=code&scope=ais.balances.read ais.transactions.read-90days ais.transactions.read-history&state=%s",
-                                BuildConfig.RABO_API_URL, BuildConfig.RABO_CLIENT_ID, state);
+                        intentUrl = String.format( // TODO: Register before firing intent, then we don't have to send the pin as the state.
+                                "%s/oauth2/authorize?client_id=%s&response_type=code&scope=%s&state=%s",
+                                BuildConfig.RABO_API_URL, BuildConfig.RABO_CLIENT_ID, setupViewModel.getScopes(), state);
                         Log.d(TAG, intentUrl);
                 }
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(intentUrl));
